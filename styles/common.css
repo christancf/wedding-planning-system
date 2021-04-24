@@ -1,0 +1,203 @@
+/*DO NOT CHANGE ANYTHING HERE. USE A NEW STYLE SHEET FOR YOUR WORK*/
+/*Use these colors for your work
+
+Swiss Coffee- #DCD2C8
+Dark Tan- #916745
+Wine Berry- #531839
+Roman- #D0665A
+Jazzberry Jam- #9E0050 */
+body{
+   background-color:#DCD2C8;
+   margin:0;
+}
+
+hr{
+    border: 1px solid #555555;
+    margin:0;
+}
+.topnav ul{
+    list-style-type:none;
+    margin-top:20px;
+    padding:0;
+    overflow:hidden;
+    background-color:#531839;
+}
+
+.topnav li{
+    float:left;
+    list-style-type:none;
+}
+
+.topnav li a{
+    display:block;
+    color:white;
+    text-align:center;
+    padding:14px 16px;
+    text-decoration:none;
+    font-family:sans-serif, serif;
+    font-size:15px;
+}
+
+.topnav li a:hover:not(.active){
+    color:#a86089;
+}
+
+.topnav .active{
+   background-color:#a65683;
+}
+div.icon{
+
+}
+div.topicon a{
+    text-decoration:none;
+    color:black;
+    padding: 15px;
+    font-size:25px;
+    float:right;
+}
+
+#center{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:200px;
+    height:auto;
+}
+
+#search{
+    float:right;
+    padding:5px 12px;
+    margin:8px 15px;
+    border:none;
+    border-radius:5px;
+    font-size:15px;
+}
+
+#search:focus{
+    outline:none;
+}
+footer form{
+    border: 1px solid black;
+    padding:2px 10px 1px;
+    margin:20px 10px 1px 10px;
+    width:250px;
+}
+
+#subscription{
+    border:none;
+    border-bottom:2px solid #555555;
+    width:240px;
+}
+#subscription:focus{
+    outline:none;
+}
+
+#subscribe{
+    margin:10px 10px 10px 80px;
+    border-radius:7px;
+    border:1px solid black;
+    transition-duration:0.4s;
+}
+#subscribe:hover{
+    background:#555555;
+    color:white;
+}
+footer h4{
+    padding-right:0px;
+    margin:10px 10px 10px 1px;
+}
+footer h5{
+    padding:10px;
+    margin:0;
+}
+div.footicon a{
+    text-decoration:none;
+    color:black;
+    padding: 10px 1px 10px 10px;
+    font-size:18px;
+    margin-right:5px;
+}
+#fb:hover{
+    color:#3b5998;
+}
+#tw:hover{
+    color:#00BFFF;
+}
+#pin:hover{
+    color:red;
+}
+#ig:hover{
+    background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    -webkit-background-clip: text;
+    background-clip:text;
+    color:transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+#search1{
+    float:right;
+    padding:5px 13px 6px 15px;
+    margin:8px;
+    border-radius:5px;
+    border:none;
+}
+
+#search1:hover{
+    background-color:#DCD2C8;
+}
+#search1 i{
+    color:#555555;
+    padding:2px 0px;
+}
+
+.container{
+    display:flex;
+}
+
+.ftlogo{
+    margin:20px 0px 0px 270px;
+    width:100px;
+    height:auto;
+}
+
+.ftlink{
+    display:flex;
+    margin-left:180px;   
+}
+
+.ftlink a{
+    text-decoration:none;
+    color:black;
+    font-family:sans-serif, serif;
+    font-size:small;
+    margin:1px 0px 0px 0px;
+    line-height:30px;
+}
+
+.ftlinkr a{
+    margin-left:250px;
+}
+.ftbot{
+    display:flex;
+    align-items:center;
+}
+
+.ftbot h6{
+    margin-left:665px;
+    align:center;     
+}
+
+.ftbot h6 a{
+    font-size:xx-small;
+}
+
+.ftbot a{
+    text-decoration:none;
+    color:black;
+    font-size:small;
+    padding:10px 25px 10px 10px;
+}
+
+#con{
+    line-height:1px;
+}
