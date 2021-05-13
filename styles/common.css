@@ -1,16 +1,26 @@
-/*DO NOT CHANGE ANYTHING HERE. USE A NEW STYLE SHEET FOR YOUR WORK*/
-/***************************************
-Use similar colors used in this template
-****************************************/
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:'Poppins', sans-serif;
 }
-::-webkit-scrollbar{
-    width:0;
+::-webkit-scrollbar {
+  width: 7px;
+  height:100px;
 }
+
+::-webkit-scrollbar-track {
+  background:black; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius:8px;
+}
+::-webkit-scrollbar-thumb:hover{
+	background-image:linear-gradient(grey,black);
+}
+
 
 /**************************************************
 HEADER
@@ -113,11 +123,12 @@ HEADER
     background:#ff5722;
     display:block;
     margin:auto;
-    transition:0.6s;
+    transition:0.6s;    
 }
-.topnav ul li:hover::after{
+.topnav ul li:hover::after{           
     width:100%;
 }
+
 /*.topnav ul li.active::after{
     width:100%;
 }*/
@@ -270,19 +281,4 @@ FOOTER
     border:1px solid white;
     transition:0.7s;
     font-size:13px
-}
-
-.ftbot h6 a{
-    font-size:xx-small;
-}
-
-.ftbot a{
-    text-decoration:none;
-    color:black;
-    font-size:small;
-    padding:10px 25px 10px 10px;
-}
-
-#con{
-    line-height:1px;
 }
