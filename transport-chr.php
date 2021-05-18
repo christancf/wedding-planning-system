@@ -9,10 +9,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,600;0,700;1,100;1,400&display=swap">
         <script src="https://kit.fontawesome.com/ab07e88f42.js" crossorigin="anonymous"></script>
-
     </head>
     <body>
-        <!--<div id="scrollbar"></div>-->
+        
         <section class="header">
             <div class="topicon">                
                     <a href="cart-chr.php"><i class="fas fa-shopping-cart"></i></a>
@@ -84,17 +83,39 @@
             </div>   
         </section>    
         <div class="content">
-            <div class="transportation-chr">                
+			<!--Change ID for every vendor-->  
+            <div class="transportation-chr">               
                 <div class="transport-table-chr">
-                        <div class="display-left">                                                              
+                        <div class="display-left">
+                                <!--Change images according to your category-->
                                 <img id="left-img" src="images/back.jpg">
-                                <button id="myBtn">Read more</button>
+                                <button onclick="document.getElementById('vendor').style.display='block'" class="myBtn">Read more</button>
                                 <div id="vendor" class="category">
+                                  <!--Change the class according to your category-->
                                   <div class="transportation-content">
-                                    <span class="close">&times;</span>
-                                        <p>Image</p>
-                                        <h3>Vendor name</h3>
-                                        <p>Description</p>
+                                    <span onclick="document.getElementById('vendor').style.display='none'" class="close">&times;</span>
+                                        <p>Cater me</p>
+                                        <h3>Cake</h3>
+                                        <p>Rs:3000</p>
+                                        <input type="submit" value="+Add">
+                                  </div>                                                  
+                                </div>
+                        </div>                        
+                </div>              
+            </div>
+			
+			<div class="transportation-chr">                
+                <div class="transport-table-chr">
+                        <div class="display-left">
+                                <!--Change images according to your category-->
+                                <img id="left-img" src="images/back.jpg">
+                                <button onclick="document.getElementById('vendor1').style.display='block'" class="myBtn">Read more</button>
+                                <div id="vendor1" class="category">
+                                  <div class="transportation-content">
+                                    <span onclick="document.getElementById('vendor1').style.display='none'" class="close">&times;</span>
+                                        <p>Floralx</p>
+                                        <h3>Flower</h3>
+                                        <p>Rs:5000</p>
                                         <input type="submit" value="+Add">
                                   </div>                                                  
                                 </div>
@@ -142,7 +163,6 @@
             </div>
           </div>
         </footer>
-        <script src="scripts/vendor-modal-form.js"></script>      
+              
     </body>
 </<html>
-
