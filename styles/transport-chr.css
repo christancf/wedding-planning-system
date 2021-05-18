@@ -44,10 +44,12 @@
   margin-top:50px;
   margin-left:300px;
 }
-#left-img:hover{
+.img:hover{
   filter:blur(1px);  
 }
-#myBtn{
+/*Change the button id into button class*/
+
+.myBtn{
   position:absolute;
   transform: translate(-156%, 250%);
   -ms-transform: translate(-156%, 250%);
@@ -60,7 +62,7 @@
   border-radius:8px;
   text-align:center
 }
-#myBtn:hover{
+.myBtn:hover{
   color:black;
   border:solid;
 }
