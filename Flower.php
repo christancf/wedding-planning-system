@@ -91,36 +91,36 @@
 						
 						
 				echo ("<div class=transportation-chr>"); 						
-					echo ("<div class=transport-table-chr>");
-                        echo ("<div class=display-left>");                                                              
-                            echo '<img id="left-img" src="data:company_image;base64,'.base64_encode($row['company_image']).'">';
-                                echo ("<button onclick=document.getElementById(".$row['vendor_ID'].").style.display='block' class=myBtn>Read more</button>");
-								echo ("<div id=".$row['vendor_ID']." class=category>");
-									echo ("<div class=transportation-content>");
-										echo ("<span onclick=document.getElementById(".$row['vendor_ID'].").style.display='none' class=close>&times;</span>");
-                                        echo ("<h3>".$row['business_name']."</h3>");
-										echo ("<p>".$row['description']."</p>");
-										echo ("<p>"."Typcal Price : Rs ".$row['price']."</p>");
-                                        echo ('<form method="post" action="#">');
-										echo ('<input type="hidden" name="hidden_ID" value="'.$row['vendor_ID'].'">');
-                                        echo ('<input type="submit" name="btn3" value="+Add">');
-										echo ("</form>");
-									echo ("</div>");
-								echo ("</div>");
-						echo ("</div>");								
+				echo ("<div class=transport-table-chr>");
+                        		echo ("<div class=display-left>");                                                              
+                            		echo '<img id="left-img" src="data:company_image;base64,'.base64_encode($row['company_image']).'">';
+                                	echo ("<button onclick=document.getElementById(".$row['vendor_ID'].").style.display='block' class=myBtn>Read more</button>");
+						echo ("<div id=".$row['vendor_ID']." class=category>");
+							echo ("<div class=transportation-content>");
+							echo ("<span onclick=document.getElementById(".$row['vendor_ID'].").style.display='none' class=close>&times;</span>");
+                                        			echo ("<h3>".$row['business_name']."</h3>");
+								echo ("<p>".$row['description']."</p>");
+								echo ("<p>"."Typcal Price : Rs ".$row['price']."</p>");
+                                        			echo ('<form method="post" action="#">');
+								echo ('<input type="hidden" name="hidden_ID" value="'.$row['vendor_ID'].'">');
+                                        			echo ('<input type="submit" name="btn3" value="+Add">');
+								echo ("</form>");
+							echo ("</div>");
+						echo ("</div>");
+					echo ("</div>");								
                                
 						
-						// Display outside of the modal
-						echo ("<div class=display-left>"); 
-                                echo '<img id="left-img1" class=border>';
-                                echo ("<div class=ct>");
+					// Display outside of the modal
+					echo ("<div class=display-left>"); 
+                                		echo '<img id="left-img1" class=border>';
+                                			echo ("<div class=ct>");
 								echo ("<h3>".$row['business_name']."</h3>");
 								echo ("<p>".$row['description']."</p>");
 								echo("<br>");
-								echo ("</div>");
-                        echo ("</div>");
-						
-					echo ("</div>");
+						echo ("</div>");
+                        		echo ("</div>");
+				
+				echo ("</div>");
 				echo ("</div>");
 						 
 						
@@ -151,31 +151,31 @@
 					echo ("<h1>Search Results for $business_name </h1>");
 					echo ("<div class=transport-table-chr>");
 					
-                        echo ("<div class=display-left>");                                                              
-                                echo '<img id="left-img" src="data:company_image;base64,'.base64_encode($row['company_image']).'">';
-                                echo ("<button onclick=document.getElementById('vendor').style.display='block' class=myBtn>Read more</button>");
-                                echo ("<div id=vendor class=category>");
-									echo ("<div class=transportation-content>");
-										echo ("<span onclick=document.getElementById('vendor').style.display='none' class=close>&times;</span>");
-										echo ("<h3>".$row['business_name']."</h3>");
-										echo ("<p>".$row['description']."</p>");
-										echo ("<p>".$row['price']."</p>");
-										echo ('<form method="post" action="#">');
-										echo ('<input type="hidden" name="hidden_ID" value="'.$row['vendor_ID'].'">');
-										echo ('<input type="submit" name="btn3" value="+Add">');
-										echo ("</form>");
-									echo ("</div>");                                                  
-                                echo ("</div>");
-						echo ("</div>"); 
+                        		echo ("<div class=display-left>");                                                              
+                                	echo '<img id="left-img" src="data:company_image;base64,'.base64_encode($row['company_image']).'">';
+                                	echo ("<button onclick=document.getElementById('vendor').style.display='block' class=myBtn>Read more</button>");
+                                	echo ("<div id=vendor class=category>");
+						echo ("<div class=transportation-content>");
+						echo ("<span onclick=document.getElementById('vendor').style.display='none' class=close>&times;</span>");
+							echo ("<h3>".$row['business_name']."</h3>");
+							echo ("<p>".$row['description']."</p>");
+							echo ("<p>".$row['price']."</p>");
+							echo ('<form method="post" action="#">');
+							echo ('<input type="hidden" name="hidden_ID" value="'.$row['vendor_ID'].'">');
+							echo ('<input type="submit" name="btn3" value="+Add">');
+							echo ("</form>");
+						echo ("</div>");                                                  
+                                	echo ("</div>");
+					echo ("</div>"); 
 				
-						echo ("<div class=display-left>"); 
-                                echo '<img id="left-img1" class=border>';
-                                echo ("<div class=ct>");
-								echo ("<h3>".$row['business_name']."</h3>");
-								echo ("<p>".$row['description']."</p>");
-								echo("<br>");
-								echo ("</div>");
-                        echo ("</div>");
+					echo ("<div class=display-left>"); 
+                                		echo '<img id="left-img1" class=border>';
+                                		echo ("<div class=ct>");
+							echo ("<h3>".$row['business_name']."</h3>");
+							echo ("<p>".$row['description']."</p>");
+							echo("<br>");
+						echo ("</div>");
+                        		echo ("</div>");
 						
 					echo ("</div>");	
 				
