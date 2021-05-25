@@ -66,10 +66,10 @@
 			
 			<div class="search-bar-chr">
 				<form method="post" action="#">
-                    <input type="text" id="search-chr" name="business_name" placeholder="(E.g: Wedding Limos)">
-                    <button type="submit" name="ctd_search"><img src="images/search.png"></button>                    
-                </form>
-            </div>
+                    			<input type="text" id="search-chr" name="business_name" placeholder="(E.g: Wedding Limos)">
+                    			<button type="submit" name="ctd_search"><img src="images/search.png"></button>                    
+                		</form>
+            		</div>
 					
         </section> 
 			 
