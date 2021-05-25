@@ -60,7 +60,6 @@
                                 if($con->query($sql1))
                                 {
                                     $_SESSION['email'] = $email;
-
                                     $check2 = "SELECT *
                                                     FROM users
                                                     WHERE email = '$email'";
@@ -70,6 +69,7 @@
                                         {
                                             while($row=$result2->fetch_assoc())
                                             {
+                                                $_SESSION['userID'] = $row['user_id'];
                                                 header('location: entry.php?user_id='.$row['user_id']);           
                                             }
                                         }
@@ -108,6 +108,7 @@
                             {
                                 while($row=$result2->fetch_assoc())
                                 {
+                                    $_SESSION['userID'] = $row['user_id'];
                                     header('location: entry.php?user_id='.$row['user_id']);           
                                 }
                             }

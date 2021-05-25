@@ -14,11 +14,10 @@
         <?php
         unset($_SESSION['message']);
     }
-
-    $userID = '';
-    if(isset($_GET['user_id']))
+    $userID="";
+    if(isset($_SESSION['userID']))
     {
-        $userID = $_GET['user_id'];
+        $userID = $_SESSION['userID'];
     }
     if(isset($_POST['delete_image']))
     {
@@ -40,14 +39,14 @@
                     if($con->query($delete_image))
                     {
                         $_SESSION['message'] = "Your profile picture was deleted successfully!";
-                        header("location: user-account-say.php?user_id=$userID");
+                        header("location: user-account-say.php");
                         exit(0);
                     }
                 }
                 else
                 {
                     $_SESSION['message'] = "You don't have a profile picture. You can add one! ";
-                    header("location: user-account-say.php?user_id=$userID");
+                    header("location: user-account-say.php");
                     exit(0);
                 }
             }
@@ -99,14 +98,14 @@
                     else
                     {
                         $_SESSION['message'] = "File too large!";
-                        header("location: user-account-say.php?user_id=$userID");
+                        header("location: user-account-say.php");
                         exit(0);
                     }
                 }
                 else
                 {
                     $_SESSION['message'] = "Sorry! Only JPG, JPEG, PNG, JFIF files are allowed";
-                    header("location: user-account-say.php?user_id=$userID");
+                    header("location: user-account-say.php");
                     exit(0);
                 }
             }
@@ -115,7 +114,7 @@
         if(empty($firstName) && empty($lastName) && $weddingDate ==  '1970-01-01' && empty($email) && empty($file_name_to_check_the_ext))
         {
             $_SESSION['message'] = "Please choose at least one detail to be changed.";
-            header("location: user-account-say.php?user_id=$userID");
+            header("location: user-account-say.php");
             exit(0);
         }
         
@@ -129,7 +128,7 @@
                 if($result_check ->num_rows > 0)
                 {
                     $_SESSION['message'] = "Email is already in use. Please enter a new email.";
-                    header("location: user-account-say.php?user_id=$userID");
+                    header("location: user-account-say.php");
                     exit(0);
                 }
                 else
@@ -155,7 +154,7 @@
         if ($weddingDate < $currentDate && $weddingDate != '1970-01-01')
         {
             $_SESSION['message'] = "Please choose a date in the future.";
-            header("location: user-account-say.php?user_id=$userID");
+            header("location: user-account-say.php");
             exit(0);
         }
         if(!empty($firstName))
@@ -208,7 +207,7 @@
         if($result = 1  || $result = 2 || $result = 3 || $result = 4 || $result = 5)
         {
             $_SESSION['message'] = "Updated Successfully!";
-            header("location: user-account-say.php?user_id=$userID");
+            header("location: user-account-say.php");
             exit(0);
         }
         $result=0;
@@ -343,7 +342,7 @@
                                     <li><a href="beauty.html">Beauty & Health</a></li>
                                     <li><a href="bridal.html">Bridal Wear</a></li>
                                     <li><a href="groom.html">Groom Wear</a></li>
-                                    <li><a href="photography-say.php?user_id=<?php echo $userID;?>">Photography</a></li>
+                                    <li><a href="photography-say.php">Photography</a></li>
                                     <li><a href="catering.php">Catering</a></li>
                                     <li><a href="cake.html">Cake</a></li>
                                     <li><a href="band.html">DJ/Bands</a></li>
@@ -360,7 +359,7 @@
                     </ul>                    
                 </div>                
             </nav>   
-            <div class="page-name"><a href="user-account-say.php?user_id=<?php echo $userID;?>">User Account Settings</a></div>
+            <div class="page-name"><a href="user-account-say.php">User Account Settings</a></div>
         </section>  
         <div class="content">
             <div class="mybody">
@@ -368,10 +367,10 @@
                     <div class="form1">
                         <?php 
                             require 'config.php';
-                            $ID = $_GET['user_id'];
+                            
                             $get_image = "SELECT *
                                                     FROM users
-                                                    WHERE user_ID = '$ID' 
+                                                    WHERE user_ID = '$userID' 
                                                     LIMIT 1";
                             if($get_image_result=$con->query($get_image))
                             {
@@ -392,7 +391,7 @@
                             }
                             $con->close();  
                         ?>
-                        <form name="details" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])."?user_id=".$_GET['user_id'];?>" enctype="multipart/form-data">
+                        <form name="details" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" enctype="multipart/form-data">
                             <p class="headings">Change User Details</p>
                             <br>
                             <div class="input">
@@ -416,12 +415,12 @@
                             </div>
                             <div class="input">
                                 <label for="delete_image" class="text">Click here to delete your profile picture</label>
-                                <button type="submit" name="delete_image" id="delete_image" class="inputfile" formaction="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])."?user_id=".$_GET['user_id'];?>"> Delete profile picture</button>
+                                <button type="submit" name="delete_image" id="delete_image" class="inputfile" formaction="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"> Delete profile picture</button>
                             </div>
                         </form>
                     </div>
                         <div class="form2">
-                            <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])."?user_id=".$_GET['user_id'];?>">
+                            <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
                                 <p class="headings">Change Password</p>
                                 <div class="input">
                                     <input type="password" placeholder="Current Password" name="currentPassword" required>
@@ -439,7 +438,7 @@
                             </form>
                         </div>
                         <div class="form3">
-                            <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])."?user_id=".$_GET['user_id'];?>">
+                            <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
                                 <p class="headings">Delete Account</p>
                                 <div class="input">
                                     <input type="password" placeholder="Current Password" name="currPassword" required>

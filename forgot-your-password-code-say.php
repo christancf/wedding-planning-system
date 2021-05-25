@@ -51,7 +51,7 @@
                     $email_template = "
                         <h2 style='font-family:Comic Sans MS;'>Hi ".$fname."</h2>
                         <h3 style='font-family:Comic Sans MS;'>We received a password reset request from your account.</h3>
-                        <a href='http://localhost/wedding-planning-system/password-change-say.php?token=$token&email=$dbemail' style='font-family:Comic Sans MS;'>Click here to reset your password.</a>
+                        <a href='http://localhost/sai-final/password-change-say.php?token=$token&email=$dbemail' style='font-family:Comic Sans MS;'>Click here to reset your password.</a>
                     ";
 
                     $mail->Body = $email_template;

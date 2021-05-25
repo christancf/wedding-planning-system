@@ -42,7 +42,6 @@ HEADER
     background-image: linear-gradient( rgb(0 0 0 / 57%), rgb(0 0 0 / 91%)),url(../images/back.jpg);
     background-position:0% 10%;
     background-size:cover;
-    /* background-attachment: fixed; */
     position:relative;
     color:whitesmoke;
 } 
