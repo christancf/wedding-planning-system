@@ -154,7 +154,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <li><a href="gallery-cha.html">GALLERY</a></li>
+                        <li><a href="gallery-cha.php">GALLERY</a></li>
                         <!-- if user has logged in, go to overview page, else, go to login -->
                         <li><a href="<?php if(isset($_SESSION['userID'])) { ?>overview-chr.php<?php } else { ?>log-in-say.php<?php }?>">OVERVIEW</a></li>                        
                         <li><a href="<?php if(isset($_SESSION['userID'])) { ?>checklist-cha.php<?php } else { ?>log-in-say.php<?php }?>">CHECKLIST</a></li>
@@ -359,7 +359,7 @@
                     <h3>Top links</h3>
                     <ul>
                         <li><a href="<?php if(isset($_SESSION['userID'])) { ?>user-account-say.php<?php } else { ?>log-in-say.php<?php }?>"><i class="fa fa-angle-right"></i>&nbspUser Account</a></li>
-                        <li><a href="gallery-cha.html"><i class="fa fa-angle-right"></i>&nbspGallery</a></li>
+                        <li><a href="gallery-cha.php"><i class="fa fa-angle-right"></i>&nbspGallery</a></li>
                         <li><a href="contact-cha.php"><i class="fa fa-angle-right"></i>&nbspContact</a></li>
                     </ul>
                 </div>
@@ -374,7 +374,7 @@
                 </div>
             </div>
             <div class="ft">
-                <h6>&copy&nbsp2021 Cupid's Arrow. All rights reserved.<a href="privacy-cha.html">&nbspPrivacy&nbspPolicy&nbsp&amp;&nbspTerms&nbspof&nbspUsage</a><p>&nbsp|&nbspDesign&nbspby&nbsp</p><p id="group">MLB_01.01_06</p></h6>
+                <h6>&copy&nbsp2021 Cupid's Arrow. All rights reserved.<a href="privacy-cha.php">&nbspPrivacy&nbspPolicy&nbsp&amp;&nbspTerms&nbspof&nbspUsage</a><p>&nbsp|&nbspDesign&nbspby&nbsp</p><p id="group">MLB_01.01_06</p></h6>
             </div>
           </div>
         </footer>
