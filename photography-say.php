@@ -157,7 +157,7 @@
                         <li><a href="gallery-cha.html">GALLERY</a></li>
                         <!-- if user has logged in, go to overview page, else, go to login -->
                         <li><a href="<?php if(isset($_SESSION['userID'])) { ?>overview-chr.php<?php } else { ?>log-in-say.php<?php }?>">OVERVIEW</a></li>                        
-                        <li><a href="checklist-cha.html">CHECKLIST</a></li>
+                        <li><a href="<?php if(isset($_SESSION['userID'])) { ?>checklist-cha.html<?php } else { ?>log-in-say.php<?php }?>">CHECKLIST</a></li>
                         <li><a href="contact-cha.php">CONTACT</a></li>             
                     </ul>                    
                 </div>    
@@ -358,12 +358,9 @@
                 <div class="ftlink">
                     <h3>Top links</h3>
                     <ul>
-                        <li><a href="<?php if(isset($_SESSION['userID'])) { ?>user-account-say.php<?php } else { ?>log-in-say.php<?php }?>"><i class="fa fa-angle-right"></i>&nbspMy Account</a></li>
-                        <!-- <li><a href="vendors.html"><i class="fa fa-angle-right"></i>&nbspVendors</a></li> -->
+                        <li><a href="<?php if(isset($_SESSION['userID'])) { ?>user-account-say.php<?php } else { ?>log-in-say.php<?php }?>"><i class="fa fa-angle-right"></i>&nbspUser Account</a></li>
                         <li><a href="gallery-cha.html"><i class="fa fa-angle-right"></i>&nbspGallery</a></li>
-                        <!-- <li><a href="service.html"><i class="fa fa-angle-right"></i>&nbspService</a></li> -->
                         <li><a href="contact-cha.php"><i class="fa fa-angle-right"></i>&nbspContact</a></li>
-                        <!-- <li><a href="help.html"><i class="fa fa-angle-right"></i>&nbspHelp</a></li> -->
                     </ul>
                 </div>
                 <div class="form">
