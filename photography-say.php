@@ -17,35 +17,55 @@
    if(isset($_POST['cartbutton']))
    {
        if(isset($_SESSION['userID']))   //if user has logged in, add items to cart
-       {                                                    
-            $vendorID = $_POST['vendorID'];
-            $category = "Photography";
-            $readFromPhotography = "SELECT *
-                                                            FROM photography
-                                                            WHERE vendor_ID = '$vendorID'
-                                                            LIMIT 1";
-            if($readFromPhotographyResults=$con->query($readFromPhotography))
-            {
-                $info = $readFromPhotographyResults->fetch_assoc();
-                $companyName = $info['business_name'];
-                $price = $info['price'];
-
-                $addToCart = "INSERT INTO cart(user_ID, vendor_ID, company_name, price, category)
-                                        VALUES ('$userID', '$vendorID', '$companyName', '$price', '$category')";
-                if($con->query($addToCart))
-                {
-                    $_SESSION['message'] = "Added to cart successfully";
+       {   //checking cart table to see whether item has already been added to cart 
+           $vendorID = $_POST['vendorID']; 
+           $check_for_duplicates = "SELECT *                                    
+                                                     FROM cart
+                                                     WHERE user_ID = '$userID' && vendor_ID = '$vendorID' 
+                                                     LIMIT 1";                                
+           if($check_for_duplicates_results=$con->query($check_for_duplicates))         //if there is a record of item added to cart by user previously, 
+           {
+               if($check_for_duplicates_results->num_rows>0)
+               {
+                    $_SESSION['message'] = "That item is already in your cart.";                //show alert and will not add to cart
                     header("location: photography-say.php"); 
                     exit(0);
-                }
-                else
-                {
-                    echo "ERROR!! ".$con->error;
-                }
+               }
+               else                     //if there is no record of item in cart 
+               {
+                    $category = "Photography";
+                    $readFromPhotography = "SELECT *
+                                                                FROM photography
+                                                                WHERE vendor_ID = '$vendorID'
+                                                                LIMIT 1";
+                    if($readFromPhotographyResults=$con->query($readFromPhotography))
+                    {
+                        $info = $readFromPhotographyResults->fetch_assoc();
+                        $companyName = $info['business_name'];
+                        $price = $info['price'];
+                        //add to cart
+                        $addToCart = "INSERT INTO cart(user_ID, vendor_ID, company_name, price, category)
+                                                VALUES ('$userID', '$vendorID', '$companyName', '$price', '$category')";
+                        if($con->query($addToCart))
+                        {
+                            $_SESSION['message'] = "Added to cart successfully";
+                            header("location: photography-say.php"); 
+                            exit(0);
+                        }
+                        else
+                        {
+                            echo "ERROR!! ".$con->error;
+                        }
+                    }
+                    else
+                    {
+                        echo "ERROR!! ".$con->error;
+                    }
+               }
             }
             else
             {
-                echo "ERROR!! ".$con->error;
+                echo "ERROR! ".$con->error;
             }
         }
         else            //if user has not logged in, informs user to login if need to purchase items
