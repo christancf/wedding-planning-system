@@ -157,7 +157,7 @@
                         <li><a href="gallery-cha.html">GALLERY</a></li>
                         <!-- if user has logged in, go to overview page, else, go to login -->
                         <li><a href="<?php if(isset($_SESSION['userID'])) { ?>overview-chr.php<?php } else { ?>log-in-say.php<?php }?>">OVERVIEW</a></li>                        
-                        <li><a href="<?php if(isset($_SESSION['userID'])) { ?>checklist-cha.html<?php } else { ?>log-in-say.php<?php }?>">CHECKLIST</a></li>
+                        <li><a href="<?php if(isset($_SESSION['userID'])) { ?>checklist-cha.php<?php } else { ?>log-in-say.php<?php }?>">CHECKLIST</a></li>
                         <li><a href="contact-cha.php">CONTACT</a></li>             
                     </ul>                    
                 </div>    
