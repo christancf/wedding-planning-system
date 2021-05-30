@@ -30,7 +30,7 @@
                     {
                         //returns true;
                         $_SESSION['email'] = $email;
-                        $_SESSION['userID'] = $row['user_id'];
+
                         if(!empty($_POST['rMe']))
                         {
                             $remember_me = $_POST['rMe'];

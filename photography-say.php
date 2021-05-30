@@ -1,6 +1,11 @@
 <?php
     session_start();
     require 'config.php';
+    if(!isset($_SESSION['email']))
+    {
+        header('location:log-in-say.php');
+    }
+    // after adding to cart
     if(isset($_SESSION['message']))
     {
         ?>
@@ -8,71 +13,42 @@
         <?php
         unset($_SESSION['message']);
     }
-    $userID="";
-    if(isset($_SESSION['userID']))
+    $userID = '';
+    if(isset($_GET['user_id']))
     {
-        $userID = $_SESSION['userID'];
+        $userID = $_GET['user_id'];
     }
-    // when 'Add to Cart button is pressed
    if(isset($_POST['cartbutton']))
    {
-       if(isset($_SESSION['userID']))   //if user has logged in, add items to cart
-       {   //checking cart table to see whether item has already been added to cart 
-           $vendorID = $_POST['vendorID']; 
-           $check_for_duplicates = "SELECT *                                    
-                                                     FROM cart
-                                                     WHERE user_ID = '$userID' && vendor_ID = '$vendorID' 
-                                                     LIMIT 1";                                
-           if($check_for_duplicates_results=$con->query($check_for_duplicates))         //if there is a record of item added to cart by user previously, 
-           {
-               if($check_for_duplicates_results->num_rows>0)
-               {
-                    $_SESSION['message'] = "That item is already in your cart.";                //show alert and will not add to cart
-                    header("location: photography-say.php"); 
-                    exit(0);
-               }
-               else                     //if there is no record of item in cart 
-               {
-                    $category = "Photography";
-                    $readFromPhotography = "SELECT *
-                                                                FROM photography
-                                                                WHERE vendor_ID = '$vendorID'
-                                                                LIMIT 1";
-                    if($readFromPhotographyResults=$con->query($readFromPhotography))
-                    {
-                        $info = $readFromPhotographyResults->fetch_assoc();
-                        $companyName = $info['business_name'];
-                        $price = $info['price'];
-                        //add to cart
-                        $addToCart = "INSERT INTO cart(user_ID, vendor_ID, company_name, price, category)
-                                                VALUES ('$userID', '$vendorID', '$companyName', '$price', '$category')";
-                        if($con->query($addToCart))
-                        {
-                            $_SESSION['message'] = "Added to cart successfully";
-                            header("location: photography-say.php"); 
-                            exit(0);
-                        }
-                        else
-                        {
-                            echo "ERROR!! ".$con->error;
-                        }
-                    }
-                    else
-                    {
-                        echo "ERROR!! ".$con->error;
-                    }
-               }
+       $vendorID = $_POST['vendorID'];
+       $category = "Photography";
+       $readFromPhotography = "SELECT *
+                                                    FROM photography
+                                                    WHERE vendor_ID = '$vendorID'
+                                                    LIMIT 1";
+        if($readFromPhotographyResults=$con->query($readFromPhotography))
+        {
+            $info = $readFromPhotographyResults->fetch_assoc();
+            $companyName = $info['business_name'];
+            $price = $info['price'];
+
+            $addToCart = "INSERT INTO cart(user_ID, vendor_ID, company_name, price, category)
+                                    VALUES ('$userID', '$vendorID', '$companyName', '$price', '$category')";
+            if($con->query($addToCart))
+            {
+                // echo "Added successfully!";
+                $_SESSION['message'] = "Added to cart successfully";
+                header("location: photography-say.php?user_id=$userID");
+                exit(0);
             }
             else
             {
-                echo "ERROR! ".$con->error;
+                echo "ERROR!! ".$con->error;
             }
         }
-        else            //if user has not logged in, informs user to login if need to purchase items
+        else
         {
-            $_SESSION['message'] = "Please login or register to add items to cart";
-            header("location: photography-say.php");
-            exit(0);
+            echo "ERROR!! ".$con->error;
         }
    }
    $con->close();
@@ -93,61 +69,18 @@
         <!--<div id="scrollbar"></div>-->
         <section class="header">
             <div class="topicon">
-                <!-- when shopping cart icon is clicked, go to cart page is user has logged in, if not go to login page -->
-                <a class="fas fa-shopping-cart" href="<?php if(isset($_SESSION['userID'])) { ?>cart-chr.php<?php } else { ?>log-in-say.php<?php }?>"></a>        
+                <a class="fas fa-shopping-cart" href="cart.html"></a>
+                <a class="fas fa-question-circle" href="help.html"></a>            
                 <div class="login">
                     <ul>
-                        <?php if(!isset($_SESSION['userID'])) { //if user has not logged in show user profile icon?>
-                        <li><a id="user" href="log-in-say.php" style="margin-top:.2em;"><i class="fas fa-user-circle"></i></a></li>
-                        <?php } ?>
-                        <div>
-                            <li>
-                                <?php
-                                    require 'config.php';
-                                    $get_image = "SELECT *
-                                                            FROM users
-                                                            WHERE user_ID = '$userID' 
-                                                            LIMIT 1";
-                                    if($get_image_result=$con->query($get_image))
-                                    {
-                                        if($get_image_result->num_rows>0)
-                                        {
-                                            $row=$get_image_result->fetch_assoc();
-                                            if(isset($_SESSION['userID']))
-                                            {
-                                                if(!empty($row['user_image']))  //display user picture 
-                                                {
-                                                    echo'<center><img class="user-image" src="data:image/image;base64,'.base64_encode($row['user_image']).'" width="100" height="100" style="border-radius:50%"></center>'; 
-                                                }
-                                                else                //if user has no profile picture, display default picture
-                                                {
-                                                    ?>
-                                                    <center><img src="images/user.png" width="100" height="100" class="user-image" ></center>
-                                                    <?php
-                                                }
-                                            }
-                                        }
-                                    }
-                                    $con->close();
-                                ?>
-                            </li>
-                            <?php if(isset($_SESSION['userID'])){       //if user has logged in, show user account link and log out?>
-                            <div>
-                                <ul class="in">
-                                    <li><a href="user-account-say.php">User Account</a></li>
-                                    <li><a href="log-out-say.php">Logout</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <?php }else{        //if user has not logged in, show login/register options?>
+                        <li><a id="user" href="user-account-say.php?user_id=<?php echo $userID;?>"><i class="fas fa-user-circle"></i></a></li>
                         <div class="in">                                                                    
-                            <li><a href="log-in-say.php">Login</a></li>
-                            <li><a href="sign-up-say.php">Register</a></li>                            
-                        </div>
-                       <?php }?>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="register.html">Register</a></li>                            
+                        </div>    
                     </ul>    
                 </div>    
-            </div>                    
+            </div>                     
             <nav>
                 <div class="logo">
                     <a href="index.php">CUPID's<span>&nbspARROW</span></a>
@@ -156,45 +89,50 @@
                     <ul>
                         <li><a href="index.php">HOME</a></li>
                         <div class="vendor-cat">
-                            <li>VENDOR</li>
+                            <li><a href="vendor.html">VENDOR</a></li>
                             <div class="dropdown">
                                 <ul>                                                    
-                                    <li><a href="venue-mal.php">Venues</a></li>
-                                    <li><a href="flower-cha.php">Flowers & Decor</a></li>
-                                    <li><a href="beauty-cha.php">Beauty & Health</a></li>
-                                    <li><a href="bridal-wear-mal.php">Bridal Wear</a></li>
-                                    <li><a href="groom-chr.php">Groom Wear</a></li>
-                                    <li><a class="active" href="photography-say.php">Photography</a></li>
-                                    <li><a href="catering-nim.php">Catering</a></li>
-                                    <li><a href="cake-nim.php">Cake</a></li>
-                                    <li><a href="bands-nim.php">DJ/Bands</a></li>
-                                    <li><a href="transportation-chr.php">Transportation</a></li>
-                                    <li><a href="invitation-chr.php">Invitation</a></li>
-                                    <li><a href="officiant-cha.php">Officiants</a></li>
+                                    <li><a href="overview.html">Overview</a></li>
+                                    <li><a href="venue.html">Venues</a></li>
+                                    <li><a href="flower.html">Flowers & Decor</a></li>
+                                    <li><a href="beauty.html">Beauty & Health</a></li>
+                                    <li><a href="bridal.html">Bridal Wear</a></li>
+                                    <li><a href="groom.html">Groom Wear</a></li>
+                                    <li><a class="active" href="photography-say.php?user_id=<?php echo $userID;?>">Photography</a></li>
+                                    <li><a href="catering.html">Catering</a></li>
+                                    <li><a href="cake.html">Cake</a></li>
+                                    <li><a href="band.html">DJ/Bands</a></li>
+                                    <li><a href="transportation.html">Transportation</a></li>
+                                    <li><a href="invitation.html">Invitation</a></li>
+                                    <li><a href="officiant.html">Officiants</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <li><a href="gallery-cha.php">GALLERY</a></li>
-                        <!-- if user has logged in, go to overview page, else, go to login -->
-                        <li><a href="<?php if(isset($_SESSION['userID'])) { ?>overview-chr.php<?php } else { ?>log-in-say.php<?php }?>">OVERVIEW</a></li>                        
-                        <li><a href="checklist-cha.php">CHECKLIST</a></li>
-                        <li><a href="contact-cha.php">CONTACT</a></li>             
+                        <li><a href="gallery.html">GALLERY</a></li>                       
+                        <li><a href="overview.html">OVERVIEW</a></li>                        
+                        <li><a href="checklist.html">CHECKLIST</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>             
                     </ul>                    
                 </div>    
-            </nav>        
-            <div class="page-name"><a href="photography-say.php">Wedding Photography</a></div>
+            </nav>   
+            <div class="page-name"><a href="photography-say.php?user_id=<?php echo $userID;?>">Wedding Photography</a></div>
             <div class="search-bar">     
-                <form class="search-form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
-                    <input class="input" type="text" name="search-text" placeholder="Search Photographer Name" size="50px">
-                    <input class="search-button" type="submit" name="search-button" value="Search" size="50px">
-                </form>                   
-            </div>  
+                    <form class="search-form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])."?user_id=".$_GET['user_id'];?>" method="POST">
+                            <input class="input" type="text" name="search-text" placeholder="Search Photographer Name" size="50px">
+                            <input class="search-button" type="submit" name="search-button" value="Search" size="50px">
+                    </form>
+                </div>  
         </section>    
         <div class="content">
             <div class="mybody">
                 <div class="mycontent">
                     <?php
                         require 'config.php';
+                        $userID = '';
+                        if(isset($_GET['user_id']))
+                        {
+                            $userID = $_GET['user_id'];
+                        }
                         // ------page content-------
                         // ------- if search button is pressed---------
                         if(isset($_POST['search-button']))
@@ -234,7 +172,7 @@
                                 {
                                     echo '<center><p class="no-vendor">There are no vendors with that name</center></p>';
                                     $selections = "SELECT *
-                                                            FROM photography";
+                                    FROM photography";
                                     if($selections_result=$con->query($selections))
                                     {
                                         if($selections_result->num_rows>0)
@@ -332,14 +270,14 @@
                                                 <div class="modal_in">
                                                     <a href="#" class="modal_close">&times;</a>';
                                     echo        '<div class="vendor'.$row['vendor_ID'].'" id="vendor'.$row['vendor_ID'].'">';?>
-                                                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
+                                                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])."?user_id=".$_GET['user_id'];?>" method="POST">
                                     <?php
                                     echo            '<h2>'.$row['business_name'].'</h2>';
                                     echo            '<img src="data:image/image;base64,'.base64_encode($row['company_image']).'" width="150" height="150"><br>'; 
                                     echo            '<p>'.$row['description'].'</p><br>';  
                                     echo            '<p>Price: Rs. '.$row['price'].'</p><br>';         
                                     echo            '<input type="hidden" value="'.$row['vendor_ID'].'" name="vendorID">'; 
-                                    echo            '<input type="submit" value="Add to Cart" name="cartbutton" title="You need to be a registered member to add to cart">';
+                                    echo            '<input type="submit" value="Add to Cart" name="cartbutton">';
                                     ?>
                                                     </form> 
                                     <?php
@@ -373,14 +311,17 @@
             <div class="container">
                 <div class="about">
                     <h3>About Us</h3>
-                    <p>Cupid's Arrow is a user-friendly platform built for managing wedding planning tasks, payments and vendors.</p>
+                    <p>Lorem ipsum magna, vehicula ut scelerisque ornare porta ete</p>
                 </div>
                 <div class="ftlink">
                     <h3>Top links</h3>
                     <ul>
-                        <li><a href="<?php if(isset($_SESSION['userID'])) { ?>user-account-say.php<?php } else { ?>log-in-say.php<?php }?>"><i class="fa fa-angle-right"></i>&nbspUser Account</a></li>
-                        <li><a href="gallery-cha.php"><i class="fa fa-angle-right"></i>&nbspGallery</a></li>
-                        <li><a href="contact-cha.php"><i class="fa fa-angle-right"></i>&nbspContact</a></li>
+                        <li><a href="account.html"><i class="fa fa-angle-right"></i>&nbspMy Account</a></li>
+                        <li><a href="vendors.html"><i class="fa fa-angle-right"></i>&nbspVendors</a></li>
+                        <li><a href="gallery.html"><i class="fa fa-angle-right"></i>&nbspGallery</a></li>
+                        <li><a href="service.html"><i class="fa fa-angle-right"></i>&nbspService</a></li>
+                        <li><a href="contact.html"><i class="fa fa-angle-right"></i>&nbspContact</a></li>
+                        <li><a href="help.html"><i class="fa fa-angle-right"></i>&nbspHelp</a></li>
                     </ul>
                 </div>
                 <div class="form">
@@ -394,7 +335,7 @@
                 </div>
             </div>
             <div class="ft">
-                <h6>&copy&nbsp2021 Cupid's Arrow. All rights reserved.<a href="privacy-cha.php">&nbspPrivacy&nbspPolicy&nbsp&amp;&nbspTerms&nbspof&nbspUsage</a><p>&nbsp|&nbspDesign&nbspby&nbsp</p><p id="group">MLB_01.01_06</p></h6>
+                <h6>&copy&nbsp2021 Cupid's Arrow. All rights reserved.<a href="privacy.html">&nbspPrivacy&nbspPolicy&nbsp&amp;&nbspTerms&nbspof&nbspUsage</a><p>&nbsp|&nbspDesign&nbspby&nbsp</p><p id="group">MLB_01.01_06</p></h6>
             </div>
           </div>
         </footer>
