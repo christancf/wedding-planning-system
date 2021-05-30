@@ -185,7 +185,7 @@
             <div class="page-name"><a href="bridal-wear-mal.php">Bridal Wear</a></div>
             <div class="search-bar">     
                 <form class="search-form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
-                    <input class="input" type="text" name="search-text" placeholder="Search Photographer Name" size="50px">
+                    <input class="input" type="text" name="search-text" placeholder="Search Bridal Wear" size="50px">
                     <input class="search-button" type="submit" name="search-button" value="Search" size="50px">
                 </form>                   
             </div>  
