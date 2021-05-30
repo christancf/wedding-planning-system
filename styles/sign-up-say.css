@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.logo{
+    font-size:50px;
+}
+.logo a{
+    text-decoration:none;
+    color: rgb(255, 255, 255);
+    letter-spacing:8px;
+    font-weight:500;
+    padding-left: .5em;;
+}
+.logo a span{
+    font-size:30px;
+    font-weight:200;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient( rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url("../images/sign-up-say.jpg"); 
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;   /* aligns horizontally */
+    align-items: center;       /* aligns vertically */
+}
+.content{
+    width: 400px;
+    min-height: 400px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,.4);
+    padding: 40px 30px;
+}
+.content .signup-text{
+    color: black;
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+}
+.content .signup .input{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 25px;
+}
+.content .signup .input .inputfile
+{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+
+    /* display: block;
+    width: 100%;
+    padding: 10px 20px;
+    text-align: center;
+    border: none;
+    background: #636e72; 
+    outline: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    color: #FFF;
+    cursor: pointer; */
+}
+.content .signup .input label{
+    font-size: large;
+    padding: 0px 5px;
+    cursor: pointer;
+    text-align: justify;
+}
+.content .signup .input input{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #e7e7e7;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    background: transparent;
+    outline: none;
+}
+.content .signup .input input:focus, .content .signup .input input:valid {
+    border-color: #636e72;
+}
+.content .signup .input .create-button {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    text-align: center;
+    border: none;
+    background: #636e72; 
+    outline: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    color: #FFF;
+    cursor: pointer;
+}
+.content .signup .text {
+    font-size: large;
+    padding-left: 20px;
+}
+.content .signup .text a {
+    color: #0984e3;
+}

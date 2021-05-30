@@ -1,0 +1,239 @@
+.user-image{
+    display: block;
+}
+.page-name{
+    padding-top: 1em;
+    text-align: center;
+    font-size: 500%;
+}
+.page-name a{
+    text-decoration: none;
+    color: white;
+}
+.search-bar{
+    padding-top: 6em;
+    text-align: center;
+    padding-bottom: 2em;
+}
+.search-bar .input{
+    width: 25%;
+    border: 2px solid #e7e7e7;
+    padding: 5px 5px;
+    font-size: 1rem;
+    border-radius: 5px;
+    background: transparent;
+    outline: none;
+    color: white;
+}
+.search-bar .input::placeholder{
+    color: white;
+}
+.search-bar .search-button{
+    width: 10%;
+    padding: 5px 5px;
+    text-align: center;
+    border: 2px solid #e7e7e7;
+    background: #5d6364;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #FFF;
+    cursor: pointer;
+}
+.no-vendor{
+    margin-top: 1em;
+    margin-bottom: -1em;
+    color: black;
+    font-weight: bold;
+}
+.selections{
+    display: grid;
+    grid-template-columns: 1000px;
+    justify-content: center;
+    align-items:center;
+    padding-top: 2em;
+}
+.selections > div{
+    padding: 1.5em;
+    border-radius: 5px;
+    background-color: #ffa69e;
+    background-image: linear-gradient(315deg, #ffa69e 0%, #5d4954 74%);
+
+}
+.selections table {
+    color: white;
+}
+.column1{
+    width: 200px;
+}
+.column2{
+    width: 600px;
+}
+.column2 .business{
+    font-weight: bold;
+    padding-bottom: 3%;
+    font-size: 150%;
+}
+.column2 p{
+    line-height: 2em;
+}
+.column2 p a:link,
+.column2 p a:visited{
+    text-decoration: underline;
+    color: whitesmoke;
+}
+.modal_out{
+    background-color: rgba(0, 0, 0, .8);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;    
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s;
+}
+.modal_in{
+    width: 75%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s;
+}
+.modal_in h2{
+    color: #c31432;
+    margin-bottom: 1em;
+}
+.modal_in p{
+    line-height: 2em;
+}
+.selections table button{
+    background: #2D3436;
+    border: none;
+    padding: 5px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+.selections table button:hover{
+    transition: .5s;
+    box-shadow: 0px 0px 100px 0px rgb(0, 0, 0);
+}
+.selections table button a{
+    text-decoration: none;
+    color: white;
+}
+.modal_in input{
+    background: #2D3436;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+/* ------modal display-------- */
+#modal_out1:target{
+    opacity: 1;
+    visibility: visible;
+}
+#modal_out1:target  .modal_in {
+    opacity: 1;
+    visibility: visible;
+}
+#modal_out2:target{
+    opacity: 1;
+    visibility: visible;
+}
+#modal_out2:target  .modal_in {
+    opacity: 1;
+    visibility: visible;
+}
+#modal_out3:target{
+    opacity: 1;
+    visibility: visible;
+}
+#modal_out3:target  .modal_in {
+    opacity: 1;
+    visibility: visible;
+}
+#modal_out4:target{
+    opacity: 1;
+    visibility: visible;
+}
+#modal_out4:target  .modal_in {
+    opacity: 1;
+    visibility: visible;
+}
+#modal_out5:target{
+    opacity: 1;
+    visibility: visible;
+}
+#modal_out5:target  .modal_in {
+    opacity: 1;
+    visibility: visible;
+}
+#modal_out6:target{
+    opacity: 1;
+    visibility: visible;
+}
+#modal_out6:target  .modal_in {
+    opacity: 1;
+    visibility: visible;
+}
+#modal_out7:target{
+    opacity: 1;
+    visibility: visible;
+}
+#modal_out7:target  .modal_in {
+    opacity: 1;
+    visibility: visible;
+}
+#modal_out8:target{
+    opacity: 1;
+    visibility: visible;
+}
+#modal_out8:target  .modal_in {
+    opacity: 1;
+    visibility: visible;
+}
+#modal_out9:target{
+    opacity: 1;
+    visibility: visible;
+}
+#modal_out9:target  .modal_in {
+    opacity: 1;
+    visibility: visible;
+}
+#modal_out10:target{
+    opacity: 1;
+    visibility: visible;
+}
+#modal_out10:target  .modal_in {
+    opacity: 1;
+    visibility: visible;
+}
+/* ------------------------ */
+.modal_in a:link,
+.modal_in a:visited{
+    text-decoration: none;
+}
+.modal_close{
+    color: red;
+    font-size: 2em;
+    position: absolute;
+    top: .5em;
+    right: 1em;
+}
