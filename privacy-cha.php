@@ -118,80 +118,79 @@
         </section>    
         <div class="content">
             <div class="p_t">	
-				<br>
-				<h2 class="thath_h1">Privacy Policy<h2><br>
-				<p>CUPID's ARROW is committed to protect your privacy. This privacy Policy explains how your personal information is collected, used, and disclosed by CUPID's ARROW.</p>
-				<p>This privacy policy applies to our CUPID's Arrow website. By accessing or using our service, you signify that you have clearly  read and understood, and agree to our  use and disclosure of your personal information as explained in this Privacy Policy and our Terms of Service.</p>
-				<br>
+		<br>
+		<h2 class="thath_h1">Privacy Policy<h2><br>
+		<p>CUPID's ARROW is committed to protect your privacy. This privacy Policy explains how your personal information is collected, used, and disclosed by CUPID's ARROW.</p>
+		<p>This privacy policy applies to our CUPID's Arrow website. By accessing or using our service, you signify that you have clearly  read and understood, and agree to our  use and disclosure of your personal information as explained in this Privacy Policy and our Terms of Service.</p>
+		<br>
 					
-				<h2 class="thath_h1">Terms Of Usage<h2><br>
-				<p>By using and placing a vendor order with CUPID's ARROW, you confirm that you are in agreement with our terms and usage as given below. This will be applied to our whole website.</p>
-				<br>
+		<h2 class="thath_h1">Terms Of Usage<h2><br>
+		<p>By using and placing a vendor order with CUPID's ARROW, you confirm that you are in agreement with our terms and usage as given below. This will be applied to our whole website.</p>
+		<br>
 					
-				<h2 class="thath_h1">What Data Do We Collect?<h2><br>
-				<p>Our website gather information from you when you visit our vendors, register, place an order to cart, subscribe to newsletter, and when filling the forms of our website.</p>
-				<li>Name / Username</li>
-				<li>Phone Numbers (If necessary)</li>
-				<li>Email Addresses</li>
-				<li>Debit / credit card information</li>
-				<li>Password</li>
-				<br>
+		<h2 class="thath_h1">What Data Do We Collect?<h2><br>
+		<p>Our website gather information from you when you visit our vendors, register, place an order to cart, subscribe to newsletter, and when filling the forms of our website.</p>
+		<li>Name / Username</li>
+		<li>Phone Numbers (If necessary)</li>
+		<li>Email Addresses</li>
+		<li>Debit / credit card information</li>
+		<li>Password</li>
+		<br>
 					
-				<h2 class="thath_h1">How Do We Use The Data We Collect From Our Website?<h2><br>
-				<p>These are the ways that we use your data</p>
-				<li>To personalize your experience when you search a vendor</li>
-				<li>To improve our vendor service and customer service</li>
-				<li>To improve our website services according to your feedbacks</li>
-				<li>To process online payments</li>
-				<br>
+		<h2 class="thath_h1">How Do We Use The Data We Collect From Our Website?<h2><br>
+		<p>These are the ways that we use your data</p>
+		<li>To personalize your experience when you search a vendor</li>
+		<li>To improve our vendor service and customer service</li>
+		<li>To improve our website services according to your feedbacks</li>
+		<li>To process online payments</li>
+		<br>
 					
-				<h2 class="thath_h1">Where And When Is Data Collected From Customers And Vendors?<h2><br>
-				<p>The data you submit will be collected by our website.</p>
-				<br>
+		<h2 class="thath_h1">Where And When Is Data Collected From Customers And Vendors?<h2><br>
+		<p>The data you submit will be collected by our website.</p>
+		<br>
 					
-				<h2 class="thath_h1">How Do We Use The Email Address You Entered When You Are Registering?<h2><br>
-				<p>When you  subscribe to our Newsletter, you agree to receive emails from us. You can cancel receiving emails from us by clicking unsubscribe button. The payment processing email will not be used for any subscribed services.</p>
-				<br>
+		<h2 class="thath_h1">How Do We Use The Email Address You Entered When You Are Registering?<h2><br>
+		<p>When you  subscribe to our Newsletter, you agree to receive emails from us. You can cancel receiving emails from us by clicking unsubscribe button. The payment processing email will not be used for any subscribed services.</p>
+		<br>
 					
-				<h2 class="thath_h1">Can A Customer Or A Vendor Can Update The Data They Entered?<h2><br>
-				<p>Customer or vendor can update their personal data from the profile update option. Passwords can also be updated using the forgot password option when you are logging to the system.<p/>
-				<br>
+		<h2 class="thath_h1">Can A Customer Or A Vendor Can Update The Data They Entered?<h2><br>
+		<p>Customer or vendor can update their personal data from the profile update option. Passwords can also be updated using the forgot password option when you are logging to the system.<p/>
+		<br>
 					
-				<h2 class="thath_h1">How long do we keep your data entered to the website?<h2><br>
-				<p>Our website will keep your data as long as you use our website. When there is no need to keep your data, we will remove your data from the system.</p>
-				<br>
+		<h2 class="thath_h1">How long do we keep your data entered to the website?<h2><br>
+		<p>Our website will keep your data as long as you use our website. When there is no need to keep your data, we will remove your data from the system.</p>
+		<br>
 					
-				<h2 class="thath_h1">How Do We secure Your Data?<h2><br>
-				<p>We ensure that the vendor contract details, username and password details, and the payment details will not be disclosed to anyone.</p>
-				<br>
+		<h2 class="thath_h1">How Do We secure Your Data?<h2><br>
+		<p>We ensure that the vendor contract details, username and password details, and the payment details will not be disclosed to anyone.</p>
+		<br>
 					
-				<h2 class="thath_h1">Term And Termination<h2><br>
-				<p>The agreement will remain until terminated by our website, vendor or customer</p>
-				<br>
+		<h2 class="thath_h1">Term And Termination<h2><br>
+		<p>The agreement will remain until terminated by our website, vendor or customer</p>
+		<br>
 					
-				<h2 class="thath_h1">Customer And Vendor Consent<h2><br>
-				<p>By accessing our website, registering to our website account, or making online payment, Cusomer and Vendor should consent to our privacy Policy and Terms of usage.</p>
-				<br>
+		<h2 class="thath_h1">Customer And Vendor Consent<h2><br>
+		<p>By accessing our website, registering to our website account, or making online payment, Cusomer and Vendor should consent to our privacy Policy and Terms of usage.</p>
+		<br>
 					
-				<h2 class="thath_h1">Updates To Our Privacy Policy And Terms Of Usage<h2><br>
-				<p>We may update our privacy policy and terms of usages anytime according to the needs of our website.</p>
-				<br>
+		<h2 class="thath_h1">Updates To Our Privacy Policy And Terms Of Usage<h2><br>
+		<p>We may update our privacy policy and terms of usages anytime according to the needs of our website.</p>
+		<br>
 					
-				<h2 class="thath_h1">Cookies<h2><br>
-				<p>Our website use cookies to personalize the content you visited in our website. A cookie is a small piece of data on your device stored by your web browser. You can disable your cookies by your browser. If you disable the cookies, you cannot be accessed the our website functions correctly.</p>
-				<br>
+		<h2 class="thath_h1">Cookies<h2><br>
+		<p>Our website use cookies to personalize the content you visited in our website. A cookie is a small piece of data on your device stored by your web browser. You can disable your cookies by your browser. If you disable the cookies, you cannot be accessed the our website functions correctly.</p>
+		<br>
 					
-				<h2 class="thath_h1">Sessions<h2><br>
-				<p>Our website use sessions to identify the places of the website you have visited. A session is a small piece of data on your device stored by your web browser.</p>
-				<br>
+		<h2 class="thath_h1">Sessions<h2><br>
+		<p>Our website use sessions to identify the places of the website you have visited. A session is a small piece of data on your device stored by your web browser.</p>
+		<br>
 					
-				<h2 class="thath_h1">Contact Us<h2><br>
-				<p>Feel free to contact us</p>
-				<li>Via Email: cupidsarrowps@gmail.com</li>
-				<br>
-				
-			<br>
-			</div>
+		<h2 class="thath_h1">Contact Us<h2><br>
+		<p>Feel free to contact us</p>
+		<li>Via Email: cupidsarrowps@gmail.com</li>
+		<br>
+		<br>
+	    </div>
 			
             <div class="social">
                 <a id="fb" href="#facebook"><i class="fab fa-facebook"></i></a>
