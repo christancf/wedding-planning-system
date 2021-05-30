@@ -1,9 +1,9 @@
 #g1{
-	text-align:center;
-	color:rgb(238,235,235);
-	color:black;
-	font-size:45px;
-	letter-spacing:2px;
+    text-align:center;
+    color:rgb(238,235,235);
+    color:black;
+    font-size:45px;
+    letter-spacing:2px;
 }
 
 .ct_slides{
@@ -15,14 +15,14 @@
 }
 
 #ctd_h2{
-	color:white;
-	text-align:center;
-	text-decoration:underline;
-	text-underline-position:under;
-	color:rgb(238,235,235);
-	color:white;
-	font-size:90px;
-	letter-spacing:2px;
+    color:white;
+    text-align:center;
+    text-decoration:underline;
+    text-underline-position:under;
+    color:rgb(238,235,235);
+    color:white;
+    font-size:90px;
+    letter-spacing:2px;
 }
 
 #left-image{
