@@ -114,57 +114,53 @@
                     </ul>                    
                 </div>    
             </nav>        
-				<br><br><br><br><br><br>
-				<center>
-				<h1 id="ctd_hea1">Checklist</h1><br><br><br><br><br>
-				</center>  
+		<br><br><br><br><br><br>
+		<center>
+		<h1 id="ctd_hea1">Checklist</h1><br><br><br><br><br>
+		</center>  
         </section>    
         <div class="content">
-			<div id="checklist">
-	
+		<div id="checklist">
 			<div class="page-divide">
-			<div class="1"></div>
+				<div class="1"></div>
+				<!--Page divide for collapsible-->
+				<div class="2">
+					<br>
+					<!--15 months to go-->
+					<h2 id="cth">15 months to go</h2>
+					<button class="collapsible"  >You have only 15 months</button>
+					<div class="content1">
+						<ul class="list-item">
+							<li>
+								<input type="checkbox" name="15_months[]" value="Find your love"> Find your love 
+							</li>
+							<li>
+								<input type="checkbox" name="15_months[]" value="Got to know eachother">  Got to know eachother
+							</li>
+							<li>
+								<input type="checkbox" name="15_months[]" value="Got engaged"> Got engaged 
+							</li>
+							<br>
+							<br>
+						</ul>
+					</div>
+					<br>
 			
-			<!--Page divide for collapsible-->
-		
-			<div class="2">
-				<br>
-				<!--15 months to go-->
-				<h2 id="cth">15 months to go</h2>
-				<button class="collapsible"  >You have only 15 months</button>
-				<div class="content1">
-					<ul class="list-item">
-						<li>
-							<input type="checkbox" name="15_months[]" value="Find your love"> Find your love 
-						</li>
-						<li>
-							<input type="checkbox" name="15_months[]" value="Got to know eachother">  Got to know eachother
-						</li>
-						<li>
-							<input type="checkbox" name="15_months[]" value="Got engaged"> Got engaged 
-						</li>
-						<br>
-						<br>
-					</ul>
-				</div>
-				<br>
-			
-		
-				<!--12 months to go-->
-				<h2 id="cth">12 months to go</h2>
-				<button class="collapsible" >You have only 12 months</button>
-				<div class="content1">
-					<ul class="list-item">
-						<li>
-							<input type="checkbox" name="12_months[] " value="Discover your wedding style"> Discover your wedding style
-						</li>
-						<li>
-							<input type="checkbox" name="12_months[]" value="Research wedding costs in your area"> Research wedding costs in your area
-						</li>
-						<li>
-							<input type="checkbox" name="12_months[]" value="Book your venue"> Book your venue
-						</li>
-						<li>
+					<!--12 months to go-->
+					<h2 id="cth">12 months to go</h2>
+					<button class="collapsible" >You have only 12 months</button>
+					<div class="content1">
+						<ul class="list-item">
+							<li>
+								<input type="checkbox" name="12_months[] " value="Discover your wedding style"> Discover your wedding style
+							</li>
+							<li>
+								<input type="checkbox" name="12_months[]" value="Research wedding costs in your area"> Research wedding costs in your area
+							</li>
+							<li>
+								<input type="checkbox" name="12_months[]" value="Book your venue"> Book your venue
+							</li>
+							<li>
 							<input type="checkbox" name="12_months[]" value="Decide your guest list"> Decide your guest list
 						</li>
 						<li>
