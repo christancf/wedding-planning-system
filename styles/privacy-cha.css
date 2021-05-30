@@ -1,0 +1,16 @@
+#ct_h1{
+	font-size:75px;
+}
+
+.p_t{
+	color:black;
+	margin-left:100px;
+	margin-right:100px;
+}
+
+.thath_h1{
+	font-size:25px;
+	text-decoration:underline;
+	text-underline-position:under;
+	color:grey;
+}
