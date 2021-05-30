@@ -126,7 +126,7 @@
 			
 						<div class="ctd_icon">
 							<a class="fa fa-map-marker"></a><span class="contact-info">123, Colombo Road, Colombo</span><br>
-							<a class="fa fa-phone"></a><span class="contact-info">+94777777777</span><br>
+							<a class="fa fa-phone"></a><span class="contact-info">+94773365415</span><br>
 							<a class="fa fa-envelope"></a><span class="contact-info">cupidsarrowps@gmail.com</span><br>
 							<a class="fa fa-facebook-square"></a><span class="contact-info">Cupid's arrow</span><br>
 							<a class="fa fa-twitter"></a><span class="contact-info">#Cupidsarrow</span><br>
