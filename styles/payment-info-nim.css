@@ -1,3 +1,77 @@
-.credit-card-nim #creditCard{
-  display: none;
+body{
+  background-image: url(../images/services.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+.page-name{
+  font-size: 75px;
+  text-align: center;
+  padding-top: 80px;
+}
+.payment-method-heading-nim h2{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    color: #fff;
+}
+.cardIcons{
+  padding-left: 3em
+}
+.credit-card-nim{
+  width: 75%;
+  background-color: #f2f2f2;
+  background-position: center;
+  border: 2px solid lightgrey;
+  border-radius: 10px;
+  padding: 4em;
+  margin-left: 200px;
+}
+.credit-card-nim input[type=text]{
+  width: 400px;
+  padding: 6px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+.credit-card-nim input[type=text]:focus{
+  border: 3px solid #5a5a5a;
+  transition: .6s;
+}
+.c1{
+  display: flex;
+  justify-content: space-between;
+}
+.c2 input[type=text]{
+  width: 400px;
+}
+.c3 input[type=text]{
+  width: 200px;
+}
+.c4{
+  display: flex;
+  justify-content: space-between;
+}
+.payment-buttons{
+  margin: 2rem 2rem 2rem 35rem;
+}
+.payment-buttons button{
+  width: 200px;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  background-color: grey;
+}
+.payment-buttons #btnPay{
+  background-color: #ff5722;
+}
+.payment-buttons #btnPay:hover{
+  background-color: #db4a1d;
+  color: #fff;
+  transition: 0.5s;
+}
+.payment-buttons #btnReset:hover{
+  background-color: lightgrey;
+  transition: 0.5s;
 }

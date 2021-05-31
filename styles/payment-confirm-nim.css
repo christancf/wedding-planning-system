@@ -1,0 +1,38 @@
+body{
+  background-image: url(../images/payment-confirm-nim.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+.page-name{
+  font-size: 75px;
+  text-align: center;
+  padding-top: 80px;
+}
+.displayDetails{
+  width: 75%;
+  background-color: #f2f2f2;
+  background-position: center;
+  border: 2px solid lightgrey;
+  border-radius: 10px;
+  padding: 4em;
+  margin-left: 200px;
+  margin-top: 70px;
+}
+.displayDetails h2, h3, h4{
+  padding-bottom: 10px;
+}
+button{
+  margin: 2rem 2rem 2rem 42rem;
+  width: 200px;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  background-color: #ff5722;
+}
+button:hover{
+  background-color: #db4a1d;
+  color: #fff;
+  transition: 0.5s;
+}

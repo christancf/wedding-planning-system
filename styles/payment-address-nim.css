@@ -1,14 +1,85 @@
-
+body{
+  background-image: url(../images/payment-address-nim.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
 .page-name{
   font-size: 75px;
   text-align: center;
   padding-top: 80px;
 }
-.billing-content{
+.address-heading h3{
+  text-align: center;
+  font-size: 30px;
+  padding-top: 70px;
+  padding-bottom: 20px;
+  color: #fff;
+}
+.address-body{
+  width: 75%;
+  background-color: #f2f2f2;
+  background-position: center;
+  border: 2px solid lightgrey;
+  border-radius: 10px;
+  padding: 4em;
+  margin-left: 200px;
 
 }
-.address-heading{
-  
+.address-body input[type=text]{
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+.address-body input[type=text]:focus {
+  border: 3px solid #5a5a5a;
+  transition: .6s;
+}
+.address-body input[type=radio], [type=checkbox]{
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+.address-body textarea{
+  width: 40%;
+  margin-bottom: 20px;
+  padding: 1em;
+}
+.address-body textarea:focus{
+  border: 3px solid #5a5a5a;
+  transition: .6s;
+}
+.shipping-method-nim h3{
+  margin-bottom: 8px;
+}
+.shipping-method-nim input[type=radio]{
+  margin-bottom: 8px;
+  vertical-align:baseline;
+}
+.address-buttons{
+  margin: 2rem 2rem 2rem 35rem;
+}
+.address-buttons button{
+  width: 200px;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  background-color: grey;
+}
+.address-buttons #btnSubmit{
+  background-color: #ff5722;
+}
+.address-buttons #btnSubmit:hover{
+  background-color: #db4a1d;
+  color: #fff;
+  transition: 0.5s;
+}
+.address-buttons #btnReset:hover{
+  background-color: lightgrey;
+  transition: 0.5s;
 }
 #display{
   display: none;
