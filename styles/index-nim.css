@@ -25,6 +25,11 @@
   width: 84px;
   margin: 1em auto 0;
 }
+.page-desc{
+    font-size: 50px;
+    text-align: center;
+    padding-top: 100px;
+}
 .heading-nim p{
   padding:40px;
 }
