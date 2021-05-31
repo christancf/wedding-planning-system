@@ -1,0 +1,96 @@
+.page-name{
+    padding-top: 1em;
+    text-align: center;
+    font-size: 500%;
+}
+.page-name a{
+    text-decoration: none;
+    color: white;
+}
+.overview {    
+    background-color:#5555;
+    width:50%;
+    border-radius:50px;
+    margin:50px 1px 1px 350px; 
+    box-shadow: 4px 3px 8px 1px #969696;
+    padding-bottom:50px;
+
+}
+.overview .overview_content .overview_content_in{
+    
+    padding-top:25px;
+    padding-left:50px;
+    border-radius:5px;
+    
+    margin:1px 1px 1px 0;
+
+}
+.overview .overview_content .overview_content_in h2{
+    font-weight:400;
+}
+.items{
+    margin:1px 1px 1px 47px;
+    line-height:55px
+}
+.items li{
+    font-weight:400;
+    font-size:15px;
+    line-height:20px;
+    padding-bottom:5px;
+}
+form div h2{
+    line-height:50px;
+}
+form div input{
+    border-radius:8px;
+    width:200px;
+    height:30px;
+    border:none;
+    padding: 1px 10px;
+    margin-top:10px;
+    box-shadow: 4px 3px 8px 1px #969696;
+}
+form div input:focus{
+    outline:none;
+}
+#date{
+    padding-left:50px;
+    font-weight:400;
+}
+#alignwithdate{
+    padding-left:55px;
+    font-weight:500;    
+}
+#confirm1{
+    margin-top:20px;
+    margin-left:320px;
+    padding: 0 20px;
+    border:none;
+    width:150px;
+    border-radius:50px;
+    box-shadow: 4px 3px 8px 1px #969696;
+    font-weight:800;
+
+}
+#confirm1:hover{
+    background-color:#969696;
+    transition:0.5s;
+}
+#confirm1:focus{
+    outline:none;
+}
+.items h3{
+    font-weight:500;
+}
+/*https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
