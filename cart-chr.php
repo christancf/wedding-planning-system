@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cupid&apos;s Arrow</title>
+        <title>Cart</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles/common.css">
@@ -24,7 +24,7 @@
     <body>
         <section class="header">
             <div class="topicon">
-                <a href="#"><i class="fas fa-cart-arrow-down"></i></a>        
+                <a class="active" href="#"><i class="fas fa-cart-arrow-down"></i></a>        
                 <div class="login">
                     <ul>
                         <div>
@@ -84,7 +84,7 @@
                                     <li><a href="beauty-cha.php">Beauty & Health</a></li>
                                     <li><a href="bridal-wear-mal.php">Bridal Wear</a></li>
                                     <li><a href="groom-chr.php">Groom Wear</a></li>
-                                    <li><a class="active" href="photography-say.php">Photography</a></li>
+                                    <li><a href="photography-say.php">Photography</a></li>
                                     <li><a href="catering-nim.php">Catering</a></li>
                                     <li><a href="cake-nim.php">Cake</a></li>
                                     <li><a href="bands-nim.php">DJ/Bands</a></li>
@@ -233,7 +233,6 @@
                     </div>
                 </div>
             </div>
-            <!--Write your code here-->
             <div class="social">
                 <a id="fb" href="#facebook"><i class="fab fa-facebook"></i></a>
                 <a id="tw" href="#twitter"><i class="fab fa-twitter"></i></a>
