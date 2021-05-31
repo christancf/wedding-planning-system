@@ -1,4 +1,44 @@
+body{
+  background-image: url(../images/payment-confirm-nim.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
 .review-nim{
   display:flex;
   justify-content: center;
+}
+.review-nim{
+  width: 50%;
+  background-color: #f2f2f2;
+  background-position: center;
+  border: 2px solid lightgrey;
+  border-radius: 10px;
+  padding: 4em;
+  margin-left: 400px;
+  margin-top: 50px;
+}
+.review-heading-nim h2{
+  margin-bottom: 16px;
+}
+textarea{
+  padding: 1em;
+}
+textarea:focus{
+  border: 3px solid #5a5a5a;
+  transition: .6s;
+}
+input{
+  margin: 2rem 2rem 2rem 20rem;
+  width: 200px;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  background-color: #ff5722;
+}
+input:hover{
+  background-color: #db4a1d;
+  color: #fff;
+  transition: 0.5s;
 }
