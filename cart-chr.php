@@ -103,134 +103,136 @@
             </nav>
             <div class="page-name"><a href="#">My Cart</a></div>               
         </section>  
-        <div class="content">       
-            <div class="cart-chr">                               
-                <div class="cart-vendor-chr">
-                    <?php 
-                        require("config.php");                        
+        <div class="content">      
+            <div class="mycontent">
+                <div class="cart-chr">                               
+                    <div class="cart-vendor-chr">
+                        <?php 
+                            require("config.php");                        
 
-                        $result = $con->query("select * from cart where user_ID=".$userID);
-                        $total = 0;
-                        $_SESSION['payAmount'] = $total;
-                        if($result !== false && $result->num_rows > 0){         
-                            echo    '<table border=1>                        
-                                        <th>Vendor</th>
-                                        <th>Category</th>
-                                        <th>Price</th>';                   
-                            while($row=$result->fetch_assoc()){
-                                echo    '<tr><td>'
-                                            .$row["company_name"].
-                                        '</td>
-                                        <td>'
-                                            .$row["category"].
-                                        '</td>
-                                         <td>'
-                                            .$row["price"].
-                                         '</td></tr>';
-                     ?>
-                        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="POST">
-                    <?php
-                                echo    '<tr style=border:none;>
-                                            <td>
-                                                <input type="hidden" value="'.$row["cart_ID"].'" name="cartID">
-                                                <input type="submit" value="Remove" name="remove" onclick="count()"></td></tr>';
-                    ?>
-                        </form>
-                    <?php
-                               $total += $row["price"];
+                            $result = $con->query("select * from cart where user_ID=".$userID);
+                            $total = 0;
+                            $_SESSION['payAmount'] = $total;
+                            if($result !== false && $result->num_rows > 0){         
+                                echo    '<center><table>                        
+                                            <th>Vendor</th>
+                                            <th>Category</th>
+                                            <th>Price</th>';                   
+                                while($row=$result->fetch_assoc()){
+                                    echo    '<tr><td>'
+                                                .$row["company_name"].
+                                            '</td>
+                                            <td class="category">'
+                                                .$row["category"].
+                                            '</td>
+                                            <td class="price">'
+                                                .$row["price"].
+                                            '</td></tr>';
+                        ?>
+                            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="POST">
+                        <?php
+                                    echo    '<tr style=border:none;>
+                                                <td>
+                                                    <input type="hidden" value="'.$row["cart_ID"].'" name="cartID">
+                                                    <input type="submit" class="button" value="Remove" name="remove" onclick="count()"></td></tr>';
+                        ?>
+                            </form>
+                        <?php
+                                $total += $row["price"];
+                                }
+                                echo '</table></center>';
                             }
-                            echo '</table>';
+                            else{
+                                echo '<h4>No Item</h4>';
+                            }
+                            
+                            $budget = $con->query("SELECT budget FROM overview WHERE userID=".$userID);
+
+                            if($budget !== false && $budget->num_rows > 0){
+                                $row4 = $budget->fetch_assoc();
+                                $Budget = $row4['budget'];
+                                if($total === $Budget && $budget !== 0){
+                                ?>
+                                    <script>alert("You have reached your budget")</script>
+                                <?php
+                                }
+                                else if(($total > $Budget) && ($budget >= 5000)){
+                                ?>
+                                    <script>
+                                        var a = alert("You have exceeded the budget limit")                                                                                                               
+                                    </script>
+                                <?php
+                                }
+                            }                              
+                            $con->close();
+                        ?>
+                        <?php
+                        require("config.php");                      
+                        if(isset($_POST['remove'])){
+                            $cart = $_POST["cartID"];
+                            $sql = 'delete from cart where cart_ID='.$cart;
+                            if ($con->query($sql) === TRUE) {
+                                ?><script>window.location.replace('cart-chr.php')</script><?php
+                            }                                                    
                         }
-                        else{
-                            echo '<h4>No Item</h4>';
-                        }
+                        $con->close();
+                        ?>
                         
-                        $budget = $con->query("SELECT budget FROM overview WHERE userID=".$userID);
+                    </div>                            
+                    <div class="subtotal-chr">
+                        <center><ul class="subtotal">                        
+                            <li>Subtotal:<?php echo " Rs. ".$total ?></li>
+                        </ul></center>                    
+                        <center><form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="POST">
+                        <input type="submit" name="checkout" class="button" value="Proceed to Checkout"><br>
+                        <input type="submit" name="clear" class="button" value="Clear Cart">
+                        </form></center>
+                        <?php
+                            require("config.php");
+                            if(isset($_POST['checkout'])){                             
+                                if($total === 0){
+                        ?>          
+                                    <script>
+                                        alert("Add items to the cart")
+                                        window.location.replace('cart-chr.php')
+                                    </script>
+                        <?php
+                                }
+                                                                                    
+                                $category = array("Venue", "Transportation", "Photography", "Officiant", "DJ", "Flower", "Bridal", "Groom", "Beauty", "Invitation", "Cake", "Catering");
 
-                        if($budget !== false && $budget->num_rows > 0){
-                            $row4 = $budget->fetch_assoc();
-                            $Budget = $row4['budget'];
-                            if($total === $Budget && $budget !== 0){
-                            ?>
-                                <script>alert("You have reached your budget")</script>
-                            <?php
+                                $i = 0;
+                                for($i; $i < 12; ++$i){
+
+                                    $categoryCheck = $con->query("SELECT category, COUNT(category) FROM cart WHERE user_ID=".$userID." AND category LIKE '".$category[$i]."%' HAVING COUNT(category) > 1");
+
+                                    if($categoryCheck !== false && $categoryCheck->num_rows > 0){
+                                        $categoryDisplay = $categoryCheck->fetch_assoc();                                        
+                        ?>
+                                            <script>
+                                                alert("You can select only one item in a specific category")
+                                                window.location.replace('cart-chr.php')
+                                            </script>
+                        <?php                                                                        
+                                    }                     
+                                }
+
+                        ?>
+                                <script>window.location.replace('payment-address-nim.php')</script>
+                        <?php
                             }
-                            else if(($total > $Budget) && ($budget >= 5000)){
-                            ?>
-                                <script>
-                                    var a = alert("You have exceeded the budget limit")                                                                                                               
+                            if(isset($_POST['clear'])){
+                                $clearCart = $con->query("DELETE FROM cart WHERE user_ID=".$userID);
+                        ?>      <script>
+                                    window.location.replace("cart-chr.php")
                                 </script>
-                            <?php
+                        <?php
                             }
-                        }                              
-                        $con->close();
-                    ?>
-                    <?php
-                       require("config.php");                      
-                       if(isset($_POST['remove'])){
-                           $cart = $_POST["cartID"];
-                           $sql = 'delete from cart where cart_ID='.$cart;
-                           if ($con->query($sql) === TRUE) {
-                               ?><script>window.location.replace('cart-chr.php')</script><?php
-                           }                                                    
-                       }
-                       $con->close();
-                    ?>
-                    
-                </div>                            
-                <div class="subtotal-chr">
-                    <ul>                        
-                        <li>Subtotal:<?php echo " Rs. ".$total ?></li>
-                    </ul>                    
-                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="POST">
-                    <input type="submit" name="checkout" value="Proceed to Checkout">
-                    <input type="submit" name="clear" value="Clear Cart">
-                    </form>
-                    <?php
-                        require("config.php");
-                        if(isset($_POST['checkout'])){                             
-                            if($total === 0){
-                    ?>          
-                                <script>
-                                    alert("Add items to the cart")
-                                    window.location.replace('cart-chr.php')
-                                </script>
-                    <?php
-                            }
-                                                                                   
-                            $category = array("Venue", "Transportation", "Photography", "Officiant", "DJ", "Flower", "Bridal", "Groom", "Beauty", "Invitation", "Cake", "Catering");
-
-                            $i = 0;
-                            for($i; $i < 12; ++$i){
-
-                                $categoryCheck = $con->query("SELECT category, COUNT(category) FROM cart WHERE user_ID=".$userID." AND category LIKE '".$category[$i]."%' HAVING COUNT(category) > 1");
-
-                                if($categoryCheck !== false && $categoryCheck->num_rows > 0){
-                                    $categoryDisplay = $categoryCheck->fetch_assoc();                                        
-                    ?>
-                                        <script>
-                                            alert("You can select only one item in a specific category")
-                                            window.location.replace('cart-chr.php')
-                                        </script>
-                    <?php                                                                        
-                                }                     
-                            }
-
-                    ?>
-                            <script>window.location.replace('payment-address-nim.php')</script>
-                    <?php
-                        }
-                        if(isset($_POST['clear'])){
-                            $clearCart = $con->query("DELETE FROM cart WHERE user_ID=".$userID);
-                    ?>      <script>
-                                window.location.replace("cart-chr.php")
-                            </script>
-                    <?php
-                        }
-                        $con->close();
-                    ?>                    
+                            $con->close();
+                        ?>                    
+                    </div>
                 </div>
-             </div>
+            </div>
             <!--Write your code here-->
             <div class="social">
                 <a id="fb" href="#facebook"><i class="fab fa-facebook"></i></a>
@@ -271,4 +273,3 @@
         </footer>                                                  
     </body>
 </<html>
-
