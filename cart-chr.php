@@ -143,7 +143,7 @@
                                 echo '</table></center>';
                             }
                             else{
-                                echo '<h4>No Item</h4>';
+                                echo '<center><p class="subtotal">No Items</p></center>';
                             }
                             
                             $budget = $con->query("SELECT budget FROM overview WHERE userID=".$userID);
