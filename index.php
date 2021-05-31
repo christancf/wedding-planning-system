@@ -41,7 +41,7 @@
     </head>
     <body>
 
-        <section class="header headWidth">
+        <section class="header">
             <div class="topicon">
                 <!-- when shopping cart icon is clicked, go to cart page is user has logged in, if not go to login page -->
                 <a class="fas fa-shopping-cart" href="<?php if(isset($_SESSION['userID'])) { ?>cart-chr.php<?php } else { ?>log-in-say.php<?php }?>"></a>
@@ -132,6 +132,7 @@
                     </ul>
                 </div>
             </nav>
+              <div class="page-desc"><h2>Where CREATIVITY BLENDS with PERFECTION</h2></div>
         </section>
         <div class="content">
           <!-- WELCOME --->
