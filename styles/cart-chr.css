@@ -1,0 +1,63 @@
+.page-name{
+    padding-top: 1em;
+    text-align: center;
+    font-size: 500%;
+}
+.page-name a{
+    text-decoration: none;
+    color: white;
+}
+.mycontent{
+   padding-top: 2em;
+}
+.subtotal-chr li{
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+.cart-vendor-chr table{
+    width: 60%;
+}
+.cart-vendor-chr table th{
+    height: 50px;
+    border-bottom: 2px solid black;
+    padding: 1em;
+}
+.cart-vendor-chr table th, td{
+    height: 50px;
+    padding: 1em;
+}
+.cart-vendor-chr table .category{
+    text-align: center;
+}
+.cart-vendor-chr table .price{
+    text-align: right;
+}
+.cart-vendor-chr table .button{
+    display: block;
+    width: 20%;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    background: #636e72;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #FFF;
+    cursor: pointer;
+}
+.subtotal-chr .button{
+    display: block;
+    width: 20%;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    background: #636e72;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #FFF;
+    cursor: pointer;
+}
+.subtotal{
+    font-size: 25px;
+}
