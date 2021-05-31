@@ -21,26 +21,26 @@
            $vendorID = $_POST['vendorID'];
            $check_for_duplicates = "SELECT *
                                                      FROM cart
-                                                     WHERE user_ID = '$userID' && vendor_ID = '$vendorID' && category = 'Cake'
+                                                     WHERE user_ID = '$userID' && vendor_ID = '$vendorID' && category = 'Catering'
                                                      LIMIT 1";
            if($check_for_duplicates_results=$con->query($check_for_duplicates))         //if there is a record of item added to cart by user previously,
            {
                if($check_for_duplicates_results->num_rows>0)
                {
                     $_SESSION['message'] = "That item is already in your cart.";                //show alert and will not add to cart
-                    header("location: cake-nim.php");
+                    header("location: catering-nim.php");
                     exit(0);
                }
                else                     //if there is no record of item in cart
                {
-                    $category = "Cake";
-                    $readFromCake = "SELECT *
-                                                                FROM cake
+                    $category = "Catering";
+                    $readFromCatering = "SELECT *
+                                                                FROM catering
                                                                 WHERE vendor_ID = '$vendorID'
                                                                 LIMIT 1";
-                    if($readFromCakeResults=$con->query($readFromCake))
+                    if($readFromCateringResults=$con->query($readFromCatering))
                     {
-                        $info = $readFromCakeResults->fetch_assoc();
+                        $info = $readFromCateringResults->fetch_assoc();
                         $companyName = $info['business_name'];
                         $price = $info['price'];
                         //add to cart
@@ -49,7 +49,7 @@
                         if($con->query($addToCart))
                         {
                             $_SESSION['message'] = "Added to cart successfully";
-                            header("location: cake-nim.php");
+                            header("location: catering-nim.php");
                             exit(0);
                         }
                         else
@@ -71,7 +71,7 @@
         else            //if user has not logged in, informs user to login if need to purchase items
         {
             $_SESSION['message'] = "Please login or register to add items to cart";
-            header("location: cake-nim.php");
+            header("location: catering-nim.php");
             exit(0);
         }
    }
@@ -80,11 +80,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Wedding Cakes</title>
+        <title>Wedding Catering</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles/common.css">
-        <link rel="stylesheet" href="styles/cake-nim.css">
+        <link rel="stylesheet" href="styles/catering-nim.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,600;0,700;1,100;1,400&display=swap">
         <script src="https://kit.fontawesome.com/ab07e88f42.js" crossorigin="anonymous"></script>
@@ -165,8 +165,8 @@
                                     <li><a href="bridal-wear-mal.php">Bridal Wear</a></li>
                                     <li><a href="groom-chr.php">Groom Wear</a></li>
                                     <li><a href="photography-say.php">Photography</a></li>
-                                    <li><a href="catering-nim.php">Catering</a></li>
-                                    <li><a class="active" href="cake-nim.php">Cake</a></li>
+                                    <li><a class="active" href="catering-nim.php">Catering</a></li>
+                                    <li><a href="cake-nim.php">Cake</a></li>
                                     <li><a href="bands-nim.php">DJ/Bands</a></li>
                                     <li><a href="transportation-chr.php">Transportation</a></li>
                                     <li><a href="invitation-chr.php">Invitation</a></li>
@@ -182,10 +182,10 @@
                     </ul>
                 </div>
             </nav>
-            <div class="page-name"><a href="cake-nim.php">Wedding Cake</a></div>
+            <div class="page-name"><a href="catering-nim.php">Wedding Catering</a></div>
             <div class="search-bar">
                 <form class="search-form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
-                    <input class="input" type="text" name="search-text" placeholder="Search for Cake providers here" size="50px">
+                    <input class="input" type="text" name="search-text" placeholder="Search Caterers" size="50px">
                     <input class="search-button" type="submit" name="search-button" value="Search" size="50px">
                 </form>
             </div>
@@ -201,7 +201,7 @@
                         {
                             $searchName = $_POST['search-text'];
                             $search="SELECT *
-                                            FROM cake
+                                            FROM catering
                                             WHERE business_name LIKE '%$searchName%' ";
                             if($search_result=$con->query($search))     //show results of search
                             {
@@ -234,7 +234,7 @@
                                 {
                                     echo '<center><p class="no-vendor">There are no vendors with that name</center></p>';
                                     $selections = "SELECT *
-                                                            FROM cake";
+                                                            FROM catering";
                                     if($selections_result=$con->query($selections))
                                     {
                                         if($selections_result->num_rows>0)
@@ -281,7 +281,7 @@
                         else    //when page is visited, this is the content seen
                         {
                             $selections = "SELECT *
-                                                    FROM cake";
+                                                    FROM catering";
                             if($selections_result=$con->query($selections))
                             {
                                 if($selections_result->num_rows>0)
@@ -321,7 +321,7 @@
                         }
                         //---------modal content---------
                         $options = "SELECT *
-                                        FROM cake";
+                                        FROM catering";
                         if($options_result=$con->query($options))
                         {
                             if($options_result->num_rows>0)
