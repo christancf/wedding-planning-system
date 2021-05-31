@@ -1,0 +1,13 @@
+.page-name{
+  font-size: 75px;
+  text-align: center;
+  padding-top: 80px;
+}
+.page-name a{
+  text-decoration: none;
+  color: #fff;
+}
+.overview-heading h2{
+  text-align: center;
+  padding: 10px;
+}
