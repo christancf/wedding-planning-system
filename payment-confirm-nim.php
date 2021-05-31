@@ -5,21 +5,23 @@
   $payAmount = 4000;
   $_SESSION['payAmount'] = $payAmount;
   $pay_date = date("Y-m-d H:i:s");
-  $fname = $_SESSION['fname'];
-  $email = $_SESSION['email'];
-  $address = $_SESSION['address'];
-  $city = $_SESSION['city'];
-  $zip = $_SESSION['zip'];
-  $shippingAdr = $_SESSION['differentAdr'];
+  if(isset($_SESSION['userID'])){
+    $fname = $_SESSION['fname'];
+    $email = $_SESSION['email'];
+    $address = $_SESSION['address'];
+    $city = $_SESSION['city'];
+    $zip = $_SESSION['zip'];
+    $shippingAdr = $_SESSION['differentAdr'];
 
-  if($shippingAdr == "different"){
-    $sName = $_SESSION['sName'];
-    $sAddress = $_SESSION['sAddress'];
-    $sCity = $_SESSION['sCity'];
-    $sZip = $_SESSION['sZip'];
-    $sTelephone = $_SESSION['sTelephone'];
-    $sInstructions = $_SESSION['sInstructions'];
-    $shippingMethod = $_SESSION['shippingMethod'];
+    if($shippingAdr == "different"){
+      $sName = $_SESSION['sName'];
+      $sAddress = $_SESSION['sAddress'];
+      $sCity = $_SESSION['sCity'];
+      $sZip = $_SESSION['sZip'];
+      $sTelephone = $_SESSION['sTelephone'];
+      $sInstructions = $_SESSION['sInstructions'];
+      $shippingMethod = $_SESSION['shippingMethod'];
+    }
   }
 
   $userID="";
@@ -72,7 +74,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles/common.css">
-        <link rel="stylesheet" href="styles/index-nim.css">
+        <link rel="stylesheet" href="styles/payment-confirm-nim.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=e560">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,600;0,700;1,100;1,400&display=swap">
@@ -173,6 +175,7 @@
                     </ul>
                 </div>
             </nav>
+            <div class="page-name">Cupid's Arrow Shop</div>
         </section>
       <div class="content">
         <?php
@@ -180,19 +183,19 @@
           echo '<div class="displayDetails">';
             echo '<div class="billingDetails">';
               echo '<h2>Billing Details</h2>';
-                echo '<p>'.$fname.'<br>'.$email.'<br>'.$address.'<br>'.$city.'<br>'.$zip.'<br></p>';
+                echo '<p>'.$fname.'<br>'.$email.'<br>'.$address.'<br>'.$city.'<br>'.$zip.'</p>';
             echo '</div>';
             echo '<div class="shippingDetails">';
             if($shippingAdr == "different"){
               echo '<h2>Shipping Details</h2>';
-                echo '<p>'.$sName.'<br>'.$sAddress.'<br>'.$sCity.'<br>'.$sZip.'<br>'.$sTelephone.'<br></p>';
-                echo '<br><p><h3>Shipping Method: </h3>'.$shippingMethod.'</p><br>';
-                echo '<br><h3>Shipping Instructions:</h3><br>';
-                echo '<p>'.$sInstructions.'</p><br>';
+                echo '<p>'.$sName.'<br>'.$sAddress.'<br>'.$sCity.'<br>'.$sZip.'<br>'.$sTelephone.'</p>';
+                echo '<br><h3>Shipping Method: </h3><p>'.$shippingMethod.'</p>';
+                echo '<br><h3>Shipping Instructions:</h3>';
+                echo '<p>'.$sInstructions.'</p>';
               echo '</div>';
             }
             else{
-              echo '<br><h4>shipping to billing address</h4><br>';
+              echo '<h4>shipping to billing address</h4>';
             }
             echo '<div class="paymentDetails">';
               echo '<h2>Payment Details</h2>';
@@ -209,12 +212,13 @@
                else{
                  echo "Cart is empty";
                }
-               $con->close();
             echo '</div>';
           echo '</div>';
+          //echo '</div>';
+          $con->close();
          ?>
         <form class="confirm" action="<?php htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
-          <button name="btnConfirmPay">Confirm & Pay</button>
+          <button name="btnConfirmPay" id="confirm-payment">Confirm & Pay</button>
         </form>
 
         <div class="social">
@@ -225,7 +229,7 @@
         </div>
       </div>
 
-        <!-- ############# FOOTER ############# -->
+        <!--  FOOTER  -->
         <footer>
           <div class="footer-container">
             <div class="container">

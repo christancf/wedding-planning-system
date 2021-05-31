@@ -35,7 +35,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles/common.css">
-        <link rel="stylesheet" href="styles/home.css">
         <link rel="stylesheet" href="styles/payment-info-nim.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=e560">
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -46,7 +45,7 @@
     </head>
     <body>
         <!--<div id="scrollbar"></div>-->
-        <section class="header headWidth">
+        <section class="header">
             <div class="topicon">
                 <!-- when shopping cart icon is clicked, go to cart page is user has logged in, if not go to login page -->
                 <a class="fas fa-shopping-cart" href="<?php if(isset($_SESSION['userID'])) { ?>cart-chr.php<?php } else { ?>log-in-say.php<?php }?>"></a>
@@ -137,59 +136,71 @@
                     </ul>
                 </div>
             </nav>
+            <div class="page-name">Cupid's Arrow Shop</div>
         </section>
         <div class="content">
 
           <!-- ********** payment method page content ********** -->
           <div class="payement-method-nim">
             <div class="payment-method-heading-nim">
-              <h3>whatever blah</h3>
+              <h2>Payment Details</h2>
             </div>
             <div class="payment-method-body-nim">
               <form class="form-payment-method-nim" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                 <div class="payment-details-nim">
-                  <h3>Payment</h3>
-                  <a href="" ><button name="btnPayPal">PayPal</button></a>
+                  <!--<a href="" ><button name="btnPayPal">PayPal</button></a>-->
                   <div class="credit-card-nim" id="creditCard">
-                    <label for="cardName">Name(as it appears on card) :</label>
-                    <input type="text" name="cardName" id="cardName">
-                    <label for="cvv">CVV</label>
-                    <input type="text" name="cvv" id="cvv">
-                    <label for="cardNumber">Card Number:</label>
-                    <input type="text" name="cardNumber" id="cardNumber">
-                    <p>Expire</p>
-                    <label for="expMonth">Month</label>
-                    <select class="expireMonth" name="expMonth" id="expMonth">
-                      <option value="jan">01</option>
-                      <option value="feb">02</option>
-                      <option value="mar">03</option>
-                      <option value="apr">04</option>
-                      <option value="may">05</option>
-                      <option value="jun">06</option>
-                      <option value="jul">07</option>
-                      <option value="aug">08</option>
-                      <option value="sep">09</option>
-                      <option value="oct">10</option>
-                      <option value="nov">11</option>
-                      <option value="dec">12</option>
-                    </select>
-                    <label for="expYear">Year</label>
-                    <select class="expYear" name="expYear">
-                      <option value="21">2021</option>
-                      <option value="22">2022</option>
-                      <option value="23">2023</option>
-                      <option value="24">2024</option>
-                      <option value="25">2025</option>
-                      <option value="26">2026</option>
-                      <option value="27">2027</option>
-                      <option value="28">2028</option>
-                      <option value="29">2029</option>
-                      <option value="30">2030</option>
-                    </select>
-                    <div class="cardIcons">
-                      <img src="images/master-icon.png" alt="master card icon" width="70px" height="auto">
-                      <img src="images/Visa-icon.png" alt="visa card icon" width="70px" height="auto">
+                    <div class="c1">
+                      <div class="c2">
+                        <label for="cardName">Name(as it appears on card) :</label><br>
+                        <input type="text" name="cardName" id="cardName" required>
+                      </div>
+                      <div class="c3">
+                        <label for="cvv">CVV:</label><br>
+                        <input type="text" name="cvv" id="cvv" pattern="[0-9]+[0-9+[0-9]]" required>
+                      </div>
                     </div>
+                    <label for="cardNumber">Card Number:</label><br>
+                    <input type="text" name="cardNumber" id="cardNumber"><br>
+                    <div class="c4">
+                      <div class="expireDate">
+                        <p>Expire</p>
+                        <label for="expMonth">Month</label>
+                        <select class="expireMonth" name="expMonth" id="expMonth">
+                          <option value="jan">01</option>
+                          <option value="feb">02</option>
+                          <option value="mar">03</option>
+                          <option value="apr">04</option>
+                          <option value="may">05</option>
+                          <option value="jun">06</option>
+                          <option value="jul">07</option>
+                          <option value="aug">08</option>
+                          <option value="sep">09</option>
+                          <option value="oct">10</option>
+                          <option value="nov">11</option>
+                          <option value="dec">12</option>
+                        </select>
+                        <label for="expYear">Year</label>
+                        <select class="expYear" name="expYear">
+                          <option value="21">2022</option>
+                          <option value="22">2023</option>
+                          <option value="23">2024</option>
+                          <option value="24">2025</option>
+                          <option value="25">2026</option>
+                          <option value="26">2027</option>
+                          <option value="27">2028</option>
+                          <option value="28">2029</option>
+                          <option value="29">2030</option>
+                          <option value="30">2031</option>
+                        </select><br>
+                      </div>
+                      <div class="cardIcons">
+                        <img src="images/master-icon.png" alt="master card icon" width="70px" height="auto">
+                        <img src="images/Visa-icon.png" alt="visa card icon" width="70px" height="auto">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="payment-buttons">
                     <button type="submit" name="btnPay" id="btnPay">Next</button>
                     <button type="reset" name="btnReset" id="btnReset">Reset</button>
                   </div>
