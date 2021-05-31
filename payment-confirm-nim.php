@@ -2,7 +2,6 @@
   session_start();
   require 'config.php';
 
-  $payAmount = 4000;
   $_SESSION['payAmount'] = $payAmount;
   $pay_date = date("Y-m-d H:i:s");
   if(isset($_SESSION['userID'])){
