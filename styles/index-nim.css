@@ -141,6 +141,20 @@
 .testimonials-col-nim h3{
   margin:1rem 1rem 1rem 0;
 }
+#btnReview{
+  margin: 2rem 2rem 2rem 35rem;
+  width: 400px;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  background-color: #ff5722;
+}
+#btnReview:hover{
+  background-color: #db4a1d;
+  color: #fff;
+  transition: 0.5s;
+}
 #testimonial-text-nim{
   padding-left: 16rem;
   padding-right: 16rem;
