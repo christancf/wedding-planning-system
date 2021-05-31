@@ -1,0 +1,64 @@
+.collapsible {
+  background: linear-gradient(to right, #233329, #63d471, #233329);   
+  color: black;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  font-weight: bold; 
+}
+
+.content1 {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: bold white; 
+  box-shadow: 4px 3px 8px 1px #969696;	  
+  font-size:18px;
+  color: black; 
+}
+
+.content1{
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 70px;
+}
+
+.page-divide{
+  display: grid;
+  grid-template-columns: 7% 75%;
+  grid-gap: 70px;
+}
+
+#ctd_hea1{
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  font-size: 500%;
+  text-decoration: none;
+}
+
+.list-item{
+  -moz-column-count: 2;
+  -moz-column-gap: 10px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 10px;
+  column-count: 2;
+  column-gap: 10px;
+  padding-left:5px;
+}
+
+#cth{
+  color: black;
+  font-style: italic;
+}
+
+.list-item li{
+  color: #233329;	
+}
+
+
