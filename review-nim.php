@@ -40,7 +40,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles/common.css">
-        <link rel="stylesheet" href="styles/home.css">
         <link rel="stylesheet" href="styles/review-nim.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=e560">
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -143,20 +142,18 @@
                     </ul>
                 </div>
             </nav>
-            <div class="page-name">Cupid's Arrow Shop</div>
+            <div class="page-name">Review Us</div>
         </section>
         <div class="content">
           <!--  RATE US  -->
           <div class="review-nim">
             <div class="review-form-nim">
               <div class="review-heading-nim">
-                <h3>Rate us</h3>
+                <h3>Your reviews are valueble to us</h3>
               </div>
               <div class="review-body-nim">
-                <p>Blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah</p>
                 <form class="form-review-nim" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
-
-                  <textarea name="review-nim" rows="8" cols="80" placeholder="leave a comment"></textarea>
+                  <textarea name="review-nim" rows="8" cols="80" placeholder="leave a comment"></textarea><br>
                   <input type="submit" name="btnReview" value="Submit">
                 </form>
               </div>
