@@ -3,7 +3,7 @@
     session_start();
     if(isset($_SESSION['email']))
     {
-        header('location: entry.php');
+        header('location: index.php');
     }
     if(isset($_SESSION['status']))
     {
@@ -45,7 +45,7 @@
                             setcookie('email', $email, time() - 60 * 60);
                             setcookie('password', $pword, time() - 60 * 60);
                         }
-                        header('location: entry.php?user_id='.$row['user_id']); 
+                        header('location: index.php'); 
                     }
                     else
                     {
