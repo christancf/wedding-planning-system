@@ -1,0 +1,110 @@
+.ctd_box{
+	width:90%;
+	margin:auto;
+	overflow:hidden;
+}
+
+#Contact{
+	background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9)),url(../images/ctd_contact.jpg);
+	background-size:cover;
+	background-position:center;
+	padding:0px;
+	margin:0px;
+}
+
+#ctd_h2{
+	text-align:center;
+	text-decoration:underline;
+	text-underline-position:under;
+	color:white;
+	font-weight:500;
+	font-size: 500%;
+  
+}
+
+#ctd_p{
+	text-align:center;
+	width:70%;
+	margin-left:auto;
+	margin-right:auto;
+	padding-bottom:3%;
+	color:#fff;
+	letter-spacing:3px;
+	font-size:300%;
+	font-weight:500;
+}
+
+.contact-form a.fa{
+	font-size:22px;
+	padding:3%;
+	background-color:none;
+	margin:2%;
+	border-radius:80%;
+	cursor:pointer;
+	color:white;
+	border:2px solid white;
+}
+
+.contact-form a.fa:hover{
+	cursor:pointer;
+	border:2px solid #ffff;
+	color:#ffff;
+}
+
+.contact-form{
+	display:grid;
+	grid-template-columns: 25% 75%;
+	grid-gap:5px;
+}
+
+.ctd_info{
+	font-size:16px;
+	font-style:italic;
+	color:white;
+	letter-spacing:2px;
+}
+
+.contact-info{
+	color:white;
+}
+
+#ctd_input{
+	padding:10px;
+	margin:10px;
+	width:70%;
+	background-color:rgba(136,133,133,0.5);
+	color:black;
+	border:none;
+	outline:none;
+}
+
+#ctd_message{
+	padding:10px;
+	margin:10px;
+	width:70%;
+	background-color:rgba(136,133,133,0.5);
+	color:black;
+	border:none;
+	outline:none;
+}
+
+#ctd_select{
+	padding:10px;
+	margin:10px;
+	width:70%;
+	background-color:rgba(136,133,133,0.5);
+	color:black;
+	border:none;
+	outline:none;
+}
+
+#ctd_btn1{
+	color:white;
+	width:70%;
+	font-size:17px;
+	letter-spacing:2px;
+	height:33px;
+	background-color:rgba(136,133,133,0.5);
+	margin:10px;
+}
+
