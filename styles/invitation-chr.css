@@ -56,10 +56,8 @@
 .selections > div{
     padding: 1.5em;
     border-radius: 5px;
-    background: #c31432;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background-color: #537895;
+    background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
 }
 .selections table {
     color: white;
@@ -110,7 +108,7 @@
     transition: all .5s;
 }
 .modal_in h2{
-    color: #c31432;
+    color: #537895;
     margin-bottom: 1em;
 }
 .modal_in p{
