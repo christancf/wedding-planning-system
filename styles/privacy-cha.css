@@ -1,5 +1,6 @@
 #ct_h1{
-	font-size:75px;
+	font-weight:500;
+	font-size: 500%;
 }
 
 .p_t{
@@ -9,8 +10,19 @@
 }
 
 .thath_h1{
-	font-size:25px;
 	text-decoration:underline;
 	text-underline-position:under;
 	color:grey;
+	font-weight:500;
+	font-size:25px;
+}
+
+.p_t p{
+	font-weight:500;
+	font-size:20px;
+}
+
+.p_t li{
+	font-weight:500;
+	font-size:20px;
 }
