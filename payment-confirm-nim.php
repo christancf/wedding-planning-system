@@ -70,7 +70,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cupid's Arrow | Homepage</title>
+        <title>Cupid's Arrow | Payment</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles/common.css">
