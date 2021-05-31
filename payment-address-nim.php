@@ -165,51 +165,55 @@
             <form class="billing-address-nim" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
               <div class="billing-content">
                 <div class="address-heading">
-                  <h2>Billing Address</h2>
+                  <h3>Billing Address</h3>
                 </div>
-                <div class="address-content">
-                  <label for="fname"><i class="fas fa-user"></i>Name:</label>
-                  <input type="text" name="fname" id="fname" placeholder="Saman M. Perera">
-                  <label for="email"><i class="fas fa-envelope"></i>Email:</label>
-                  <input type="text" name="email" id="email" placeholder="samanperera@example.com">
-                  <label for="address"><i class="fas fa-address-card"></i>Street Address:</label>
-                  <input type="text" name="address" id="address" placeholder="452 W. 15th Street">
-                  <label for="city"><i class="fas fa-city"></i>City:</label>
-                  <input type="text" name="city" id="city" placeholder="Sri Jayewardenepura Kotte">
-                  <label for="zip"><i class="fas fa-map-marker-alt"></i>Zip Postal Code:</label>
-                  <input type="text" name="zip" id="zip" placeholder="10100">
-                  <p>Don't know your zip code? <a href="http://www.geonames.org/postalcode-search.html?q=&country=LK" target="_blank">Find here</a></p>
+                <div class="address-body">
+                  <label for="fname"><i class="fas fa-user"></i>&nbsp;Name:</label><br>
+                  <input type="text" name="fname" id="fname" placeholder="Saman M. Perera" required><br>
+                  <label for="email"><i class="fas fa-envelope"></i>&nbsp;Email:</label><br>
+                  <input type="text" name="email" id="email" placeholder="samanperera@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required><br>
+                  <label for="address"><i class="fas fa-address-card"></i>&nbsp;Street Address:</label><br>
+                  <input type="text" name="address" id="address" placeholder="452 W. 15th Street" required><br>
+                  <label for="city"><i class="fas fa-city"></i>&nbsp;City:</label><br>
+                  <input type="text" name="city" id="city" placeholder="Sri Jayewardenepura Kotte" required><br>
+                  <label for="zip"><i class="fas fa-map-marker-alt"></i>&nbsp;Zip Postal Code:</label><br>
+                  <input type="text" name="zip" id="zip" placeholder="10100" pattern="[0-9]+[0-9]+[0-9]+[0-9]+[0-9]" required><br>
+                  <p>Don't know your zip code? <a href="http://www.geonames.org/postalcode-search.html?q=&country=LK" target="_blank">Find here</a></p><br>
                   <label for="differentAdr">Different shipping address</label>
-                  <input type="checkbox" name="differentAdr" id="differentAdr" value="different" onclick="displayShippingForm()">
+                  <input type="checkbox" name="differentAdr" id="differentAdr" value="different" onclick="displayShippingForm()"><br>
                 </div>
               </div>
-              <div class="shipping-content" id="display">
-                <div class="address-heading">
-                  <h3>Shipping Address</h3>
-                </div>
-                  <label for="sName"><i class="fas fa-user"></i>Name:</label>
-                  <input type="text" name="sName" id="sName" placeholder="Saman M. Perera">
-                  <label for="sAddress"><i class="fas fa-address-card"></i>Street Address:</label>
-                  <input type="text" name="sAddress" id="sAddress" placeholder="452 W. 15th Street">
-                  <label for="sCity"><i class="fas fa-city"></i>City:</label>
-                  <input type="text" name="sCity" id="sCity" placeholder="Sri Jayewardenepura Kotte">
-                  <label for="sZip"><i class="fas fa-map-marker-alt"></i>Zip Postal Code:</label>
-                  <input type="text" name="sZip" id="sZip" placeholder="10100">
-                  <p>Don't know your zip code? <a href="http://www.geonames.org/postalcode-search.html?q=&country=LK" target="_blank">Find here</a></p>
-                  <label for="sTelephone"><i class="fas fa-envelope"></i>Telephone:</label>
-                  <input type="text" name="sTelephone" id="sTelephone" placeholder="0771234567">
-                  <p>Instructions for order processing:</p>
-                  <textarea name="sInstructions" rows="5" cols="50" placeholder="Enter the instrucions to process your order"></textarea>
-                  <div class="shipping-method-nim">
-                    <h3>Shipping Method</h3>
-                    <p><input type="radio" name="shippingMethod" value="standard">Standard</p>
-                    <p><input type="radio" name="shippingMethod" value="expedited">Expedited</p>
-                    <p><input type="radio" name="shippingMethod" value="urgent">Urgent</p>
+              <div class="address-content" id="display">
+                <div class="shipping-content">
+                  <div class="address-heading">
+                    <h3>Shipping Address</h3>
+                  </div>
+                  <div class="address-body">
+                    <label for="sName"><i class="fas fa-user"></i>Name:</label><br>
+                    <input type="text" name="sName" id="sName" placeholder="Saman M. Perera"><br>
+                    <label for="sAddress"><i class="fas fa-address-card"></i>Street Address:</label><br>
+                    <input type="text" name="sAddress" id="sAddress" placeholder="452 W. 15th Street"><br>
+                    <label for="sCity"><i class="fas fa-city"></i>City:</label><br>
+                    <input type="text" name="sCity" id="sCity" placeholder="Sri Jayewardenepura Kotte"><br>
+                    <label for="sZip"><i class="fas fa-map-marker-alt"></i>Zip Postal Code:</label><br>
+                    <input type="text" name="sZip" id="sZip" placeholder="10100" pattern="[0-9]+[0-9]+[0-9]+[0-9]+[0-9]"><br>
+                    <p>Don't know your zip code? <a href="http://www.geonames.org/postalcode-search.html?q=&country=LK" target="_blank">Find here</a></p><br>
+                    <label for="sTelephone"><i class="fas fa-envelope"></i>Telephone:</label><br>
+                    <input type="text" name="sTelephone" id="sTelephone" placeholder="0771234567" pattern="[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]"><br>
+                    <p>Instructions for order processing:</p>
+                    <textarea name="sInstructions" rows="5" cols="50" placeholder="Enter the instrucions to process your order"></textarea><br>
+                    <div class="shipping-method-nim">
+                      <h3>Shipping Method</h3>
+                      <label><input type="radio" name="shippingMethod" value="standard">Standard</label><br>
+                      <label><input type="radio" name="shippingMethod" value="expedited">Expedited</label><br>
+                      <label><input type="radio" name="shippingMethod" value="urgent">Urgent</label><br>
+                    </div>
                   </div>
                 </div>
+              </div>
                 <div class="address-buttons">
-                  <button type="submit" name="btnSubmit">Submit</button>
-                  <button type="reset" name="btnReset">Reset</button>
+                  <button type="submit" name="btnSubmit" id="btnSubmit">Submit</button>
+                  <button type="reset" name="btnReset" id="btnReset">Reset</button>
                 </div>
               </div>
             </form>
