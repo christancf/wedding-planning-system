@@ -281,13 +281,13 @@
                 <div class="testimonials-content-nim">
                   <?php
                       require 'config.php';
-                      $feedback = 'SELECT feedback.feedback_content, users.first_name, users.last_name users.user_image FROM feedback INNER JOIN users ON feedback.user_id = users.user_id LIMIT 2';
+                      $feedback = 'SELECT feedback.feedback_content, users.first_name, users.last_name FROM feedback INNER JOIN users ON feedback.user_id = users.user_id LIMIT 2';
                       $f_result = $con->query($feedback);
 
                     if($f_result !== false && $f_result->num_rows > 0){
                       while($row = $f_result->fetch_assoc()){
                             echo '<div class="testimonials-col-nim">';
-                              echo '<img src="data:image/image;base64,'.base64_encode($row['user_image']).'">';
+                              //echo '<img src="data:image/image;base64,'.base64_encode($row['user_image']).'">';
                               echo '<div class="testimonials-text-nim">';
                                 echo '<p>'.$row['feedback_content'].'</p>';
                                 echo '<h3>'.$row['first_name'].' '.$row['last_name'].'</h3>';
@@ -302,9 +302,8 @@
                   ?>
                 </div>
                   <form class="comment" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-                      <button name="btnReview">Leave a comment</button>
+                      <button name="btnReview" id="btnReview">Leave a comment</button>
                   </form>
-                  <a href="payment-address-nim.php">Payment Page</a>
               </div>
             </div>
           </section>
