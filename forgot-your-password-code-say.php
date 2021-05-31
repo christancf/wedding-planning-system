@@ -1,12 +1,13 @@
 <?php
     session_start();
     require 'config.php';
+
+    require 'PHPMailer.php';
+    require 'SMTP.php';
+    require 'Exception.php';
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
-
-    //Load Composer's autoloader
-    require 'vendor/autoload.php';
     
     if(isset($_POST['reset']))
     {
