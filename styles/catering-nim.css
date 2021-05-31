@@ -57,8 +57,8 @@
     padding: 1.5em;
     border-radius: 5px;
     background: #c31432;  /* fallback for old browsers */
-    background: rgb(3,0,36);
-    background: linear-gradient(90deg, rgba(3,0,36,1) 0%, rgba(25,91,136,1) 60%, rgba(0,198,255,1) 100%);
+    background: rgb(36,0,27);
+    background: linear-gradient(90deg, rgba(36,0,27,1) 0%, rgba(136,58,25,1) 60%, rgba(255,162,0,1) 100%);
 
 }
 .selections table {
